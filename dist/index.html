@@ -66,16 +66,20 @@
         <!-- offcanvas end -->
 
         <!-- spacer start -->
-        <!-- <div class="p-md-2 bg-primary transition" id="top-spacer"></div> -->
+        <div
+            class="p-sm-3 transition position-relative z-2 d-none d-md-block"
+            id="top-spacer"
+        ></div>
         <!-- spacer end -->
 
         <!-- navbar start -->
-        <!-- <div
-            class="d-flex flex-row px-3 px-lg-5 justify-content-between justify-content-md-around small fixed-top sticky-lg-top"
+        <div
+            id="navbar"
+            class="d-flex flex-row px-3 px-lg-5 justify-content-between justify-content-md-around small fixed-top sticky-md-top transition text-white"
         >
             <div class="d-block d-md-none p-2 align-self-center">
                 <a
-                    class="text-decoration-none text-dark fw-medium fs-6"
+                    class="text-decoration-none text-white fw-medium fs-6"
                     data-bs-toggle="offcanvas"
                     href="#offcanvasNav"
                     role="button"
@@ -84,12 +88,12 @@
                 ></a>
             </div>
             <div class="d-none d-md-block p-2 align-self-center">
-                <a href="#" class="text-decoration-none text-dark fw-medium"
+                <a href="#" class="text-decoration-none text-white fw-medium"
                     >HOME</a
                 >
             </div>
             <div class="d-none d-md-block p-2 align-self-center">
-                <a href="#" class="text-decoration-none text-dark fw-medium"
+                <a href="#" class="text-decoration-none text-white fw-medium"
                     >OFFICE</a
                 >
             </div>
@@ -97,39 +101,42 @@
                 Kresna Setiana
             </div>
             <div class="d-none d-md-block p-2 align-self-center">
-                <a href="#" class="text-decoration-none text-dark fw-medium"
+                <a href="#" class="text-decoration-none text-white fw-medium"
                     >HOSPITAL</a
                 >
             </div>
             <div class="d-none d-md-block p-2 align-self-center">
-                <a href="#" class="text-decoration-none text-dark fw-medium"
+                <a href="#" class="text-decoration-none text-white fw-medium"
                     >ROAD</a
                 >
             </div>
             <div class="d-block d-md-none p-2 align-self-center">
                 <a
                     href="#"
-                    class="text-decoration-none text-dark fw-medium fs-6"
+                    class="text-decoration-none text-white fw-medium fs-6"
                     ><i class="bi bi-search"></i
                 ></a>
             </div>
-        </div> -->
+        </div>
         <!-- navbar end -->
 
         <!-- carousel start -->
-        <div id="mainCarousel" class="carousel slide carousel-fade">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
+        <div
+            id="mainCarousel"
+            class="carousel slide carousel-fade vh-100 w-100 position-absolute top-0 z-0"
+        >
+            <div class="carousel-inner h-100">
+                <div class="carousel-item h-100 active">
                     <img
                         src="img/header-bg-1.jpg"
-                        class="d-block w-100"
+                        class="h-100 w-100 object-fit-cover"
                         alt="Header 1"
                     />
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item h-100">
                     <img
                         src="img/header-bg-2.jpg"
-                        class="d-block w-100"
+                        class="h-100 w-100 object-fit-cover"
                         alt="Header 2"
                     />
                 </div>
@@ -160,6 +167,7 @@
             </button>
         </div>
         <!-- carousel end -->
+        <div class="vh-100 w-100"></div>
 
         <div class="mt-5" style="width: 100px">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
@@ -187,19 +195,19 @@
         <script>
             AOS.init();
             $(document).ready(function () {
-                // $(window).scroll(function () {
-                //     console.log("Navbar = " + $(".navbar").offset().top);
-                //     console.log("Window = " + $(window).scrollTop());
-                //     let windowScroll = $(window).scrollTop();
-                //     let navbarOffset = $(".navbar").offset().top;
-                //     if (windowScroll >= navbarOffset) {
-                //         $(".navbar").addClass("bg-dark navbar-dark");
-                //         $("#top-spacer").addClass("bg-dark");
-                //     } else {
-                //         $(".navbar").removeClass("bg-dark navbar-dark");
-                //         $("#top-spacer").removeClass("bg-dark");
-                //     }
-                // });
+                $(window).scroll(function () {
+                    console.log("Navbar = " + $("#navbar").offset().top);
+                    console.log("Window = " + $(window).scrollTop());
+                    let windowScroll = $(window).scrollTop();
+                    let navbarOffset = $("#navbar").offset().top;
+                    if (windowScroll != navbarOffset || windowScroll == 0) {
+                        $("#navbar").removeClass("bg-dark navbar-dark");
+                        $("#top-spacer").removeClass("bg-dark");
+                    } else {
+                        $("#navbar").addClass("bg-dark navbar-dark");
+                        $("#top-spacer").addClass("bg-dark");
+                    }
+                });
             });
         </script>
     </body>
