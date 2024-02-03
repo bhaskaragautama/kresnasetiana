@@ -17005,6 +17005,15 @@ textarea.form-control-lg {
   font-family: "Ephesis", cursive;
 }
 
+.photo-preview:hover > img {
+  transform: scale(1.08);
+  transition-duration: 0.5s;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 3px;
