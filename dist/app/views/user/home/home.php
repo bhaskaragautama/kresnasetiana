@@ -10,7 +10,7 @@
             href="https://fonts.googleapis.com/css2?family=Ephesis&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="<?= BASEURL ?>assets/bootstrap/css/style.css" />
         <link
             href="https://unpkg.com/aos@2.3.1/dist/aos.css"
             rel="stylesheet"
@@ -62,10 +62,10 @@
                     >
 
                     <a
-                        href="#"
+                        href="<?= BASEURL ?>"
                         class="px-2 py-3 mb-2 small text-decoration-none text-white fw-medium"
-                        ><i class="bi bi-sign-intersection-side me-2"></i>
-                        ROAD</a
+                        ><i class="bi bi-person me-2"></i>
+                        LOGIN</a
                     >
                 </div>
             </div>
@@ -97,14 +97,14 @@
             <div class="d-none d-md-block align-self-center">
                 <a
                     href="#"
-                    class="p-2 text-decoration-none text-white fw-medium"
+                    class="navbar-item p-2 text-decoration-none text-white fw-medium"
                     >HOME</a
                 >
             </div>
             <div class="d-none d-md-block align-self-center">
                 <a
                     href="#"
-                    class="p-2 text-decoration-none text-white fw-medium"
+                    class="navbar-item p-2 text-decoration-none text-white fw-medium"
                     >OFFICE</a
                 >
             </div>
@@ -114,21 +114,21 @@
             <div class="d-none d-md-block align-self-center">
                 <a
                     href="#"
-                    class="p-2 text-decoration-none text-white fw-medium"
+                    class="navbar-item p-2 text-decoration-none text-white fw-medium"
                     >HOSPITAL</a
                 >
             </div>
             <div class="d-none d-md-block align-self-center">
                 <a
                     href="#"
-                    class="p-2 text-decoration-none text-white fw-medium"
+                    class="navbar-item p-2 text-decoration-none text-white fw-medium"
                     >ROAD</a
                 >
             </div>
             <div class="d-block d-md-none align-self-center">
                 <a
                     href="#"
-                    class="p-2 text-decoration-none text-white fw-medium fs-6"
+                    class="navbar-item p-2 text-decoration-none text-white fw-medium fs-6"
                     ><i class="bi bi-search"></i
                 ></a>
             </div>
@@ -139,6 +139,7 @@
         <div
             id="mainCarousel"
             class="carousel slide carousel-fade vh-100 w-100 position-absolute top-0 z-0"
+            data-bs-ride="carousel"
         >
             <div class="carousel-inner h-100">
                 <div class="carousel-item h-100 active">
@@ -345,23 +346,35 @@
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"
         ></script>
-        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="<?= BASEURL ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script>
             AOS.init();
-            $(document).ready(function () {
-                $(window).scroll(function () {
-                    console.log("Navbar = " + $("#navbar").offset().top);
-                    console.log("Window = " + $(window).scrollTop());
-                    let windowScroll = $(window).scrollTop();
-                    let navbarOffset = $("#navbar").offset().top;
-                    if (windowScroll != navbarOffset || windowScroll == 0) {
+            function scrollBar() {
+                let windowScroll = $(window).scrollTop();
+                let navbarOffset = $("#navbar").offset().top;
+                if (windowScroll != navbarOffset || windowScroll == 0) {
+                    if (
+                        $("#navbar").hasClass("bg-black") &&
+                        $("#top-spacer").hasClass("bg-black")
+                    ) {
                         $("#navbar").removeClass("bg-black");
                         $("#top-spacer").removeClass("bg-black");
-                    } else {
+                    }
+                } else {
+                    if (
+                        !$("#navbar").hasClass("bg-black") &&
+                        !$("#top-spacer").hasClass("bg-black")
+                    ) {
                         $("#navbar").addClass("bg-black");
                         $("#top-spacer").addClass("bg-black");
                     }
+                }
+            }
+            $(document).ready(function () {
+                scrollBar();
+                $(window).scroll(function () {
+                    scrollBar();
                 });
             });
         </script>

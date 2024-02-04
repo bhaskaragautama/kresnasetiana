@@ -16997,6 +16997,11 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.navbar-item:hover {
+  color: #bdbdbd !important;
+  transition: 0.3s;
+}
+
 .transition {
   transition: 0.5s;
 }
