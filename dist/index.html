@@ -356,11 +356,21 @@
                     let windowScroll = $(window).scrollTop();
                     let navbarOffset = $("#navbar").offset().top;
                     if (windowScroll != navbarOffset || windowScroll == 0) {
-                        $("#navbar").removeClass("bg-black");
-                        $("#top-spacer").removeClass("bg-black");
+                        if (
+                            $("#navbar").hasClass("bg-black") &&
+                            $("#top-spacer").hasClass("bg-black")
+                        ) {
+                            $("#navbar").removeClass("bg-black");
+                            $("#top-spacer").removeClass("bg-black");
+                        }
                     } else {
-                        $("#navbar").addClass("bg-black");
-                        $("#top-spacer").addClass("bg-black");
+                        if (
+                            !$("#navbar").hasClass("bg-black") &&
+                            !$("#top-spacer").hasClass("bg-black")
+                        ) {
+                            $("#navbar").addClass("bg-black");
+                            $("#top-spacer").addClass("bg-black");
+                        }
                     }
                 });
             });
