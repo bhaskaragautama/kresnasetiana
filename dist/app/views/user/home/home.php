@@ -120,9 +120,9 @@
             </div>
             <div class="d-none d-md-block align-self-center">
                 <a
-                    href="#"
+                    href="<?= BASEURL ?>login"
                     class="navbar-item p-2 text-decoration-none text-white fw-medium"
-                    >ROAD</a
+                    >LOGIN</a
                 >
             </div>
             <div class="d-block d-md-none align-self-center">

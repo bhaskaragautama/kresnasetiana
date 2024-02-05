@@ -1,17 +1,24 @@
 <?php
 class Login extends Controller
 {
+   public function index() {
+      $this->view('user/login/login');
+   }
+
    public function doLogin()
    {
-      $pin = $this->sanitizeString($_POST["pin"]);
-      $login = $this->model("Users_model")->readByPin(md5($pin));
-      if ($login) {
-         $_SESSION["flow-auth"] = true;
-         $_SESSION["flow-name"] = $login["name"];
-         $_SESSION["token"] = $login["pinhash"];
-         echo json_encode("1");
+      // print_r($_POST);
+      $username = $this->sanitizeString($_POST['username']);
+      $password = $this->sanitizeString($_POST['password']);
+      $login = $this->model('User_model')->readByUsernamePassword($username, $password);
+      if($login) {
+         $_SESSION['kkAuth'] = true;
+         $_SESSION['kkName'] = $login['name'];
+         $_SESSION['kkUsername'] = $login['username'];
+         header('Location: ' . BASEURL . 'dashboard');
       } else {
-         echo json_encode("0");
+         Flasher::setFlash('Username and password do not match', 'danger');
+         header('Location: ' . BASEURL. 'login');
       }
    }
 

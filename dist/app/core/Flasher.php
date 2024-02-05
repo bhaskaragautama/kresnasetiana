@@ -27,13 +27,13 @@ class Flasher
    {
       if (isset($_SESSION['flash'])) {
          if (!isset($_SESSION['flash'][0])) {
-            echo '<div class="alert alert-' . $_SESSION['flash']['type'] . ' alert-dismissible fade show" role="alert">
+            echo '<div class="alert rounded-pill alert-' . $_SESSION['flash']['type'] . ' alert-dismissible fade show" role="alert">
                ' . $_SESSION['flash']['message'] . '
                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                </div>';
          } else {
             foreach ($_SESSION['flash'] as $item) {
-               echo '<div class="alert alert-' . $item['type'] . ' alert-dismissible fade show" role="alert">
+               echo '<div class="alert rounded-pill alert-' . $item['type'] . ' alert-dismissible fade show" role="alert">
                      ' . $item['msg'] . '
                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                   </div>';
