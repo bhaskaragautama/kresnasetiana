@@ -154,6 +154,11 @@ a:visited {
     transition: 500ms;
 }
 
+.blur-load {
+    background-size: cover;
+    background-position: center;
+}
+
 // Custom scrollbar
 /* width */
 ::-webkit-scrollbar {
