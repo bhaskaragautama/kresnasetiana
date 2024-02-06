@@ -24,18 +24,44 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="d-md-block d-none col-2 vh-100 position-fixed bg-dark text-white p-0">
-                <div class="row justify-content-center pt-3 pb-5">
-                    <div class="col-lg-6 col-md-10 fs-5 fw-bold">
-                        Admin
+            <div class="d-md-block d-none col-2 vh-100 position-fixed bg-dark text-white p-0 overflow-y-auto">
+                <div class="container-fluid">
+                    <div class="row justify-content-center pt-3 pb-5">
+                        <div class="col-lg-6 col-md-10 fs-5 fw-bold">
+                            Admin
+                        </div>
                     </div>
                 </div>
                 <ul class="list-unstyled d-flex flex-column fw-semibold">
-                    <li class="admin-nav mb-2 text-lg-start text-center <?= $page == 'dashboard' ? 'active' : '' ?>">
-                        <a href="<?= BASEURL . 'dashboard'; ?>" class="d-block py-3 px-4"><i class="bi bi-speedometer me-2"></i> <span class="d-lg-inline-block d-none">Dashboard</span></a>
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'dashboard' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'dashboard'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-speedometer me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Dashboard</span></a>
                     </li>
-                    <li class="admin-nav mb-2 text-lg-start text-center <?= $page == 'term' ? 'active' : '' ?>">
-                        <a href="<?= BASEURL . 'photo'; ?>" class="d-block py-3 px-4"><i class="bi bi-images me-2"></i> <span class="d-lg-inline-block d-none">Photos</span></a>
+                </ul>
+                <div class="py-2 px-3 text-secondary small text-center text-lg-start">STORIES</div>
+                <ul class="list-unstyled d-flex flex-column fw-semibold">
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'series' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'series'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-card-list me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Series</span></a>
+                    </li>
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'story' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'story'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-journal me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Story</span></a>
+                    </li>
+                </ul>
+                <div class="py-2 px-3 text-secondary small text-center text-lg-start">PORTFOLIO</div>
+                <ul class="list-unstyled d-flex flex-column fw-semibold">
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'tags' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'tags'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-tags me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Tags</span></a>
+                    </li>
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'photo' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'photo'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-images me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Photo</span></a>
+                    </li>
+                </ul>
+                <div class="py-2 px-3 text-secondary small text-center text-lg-start">STORE</div>
+                <ul class="list-unstyled d-flex flex-column fw-semibold">
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'collection' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'collection'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-cart me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Collection</span></a>
+                    </li>
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'item' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'item'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-bag-check me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Item</span></a>
                     </li>
                 </ul>
             </div>

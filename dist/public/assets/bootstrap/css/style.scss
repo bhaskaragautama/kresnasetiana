@@ -81,11 +81,6 @@ $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w
     @extend .vh-100;
 }
 
-.photo-preview:hover>img {
-    transform: scale(1.08);
-    transition-duration: 0.5s;
-}
-
 .pointer {
     cursor: pointer;
 }
@@ -132,20 +127,20 @@ a:visited {
 }
 
 .admin-nav:hover {
-    @extend .bg-primary;
+    @extend .bg-info;
 
     & a {
-        @extend .text-white;
+        @extend .text-black;
     }
 }
 
 .admin-nav.active {
-    @extend .border-start, .border-4, .border-primary;
-    border-left: 5px;
+    // @extend .border-start, .border-4, .border-info;
+    // border-left: 5px;
 
     & a {
-        @extend .text-primary;
-        margin-left: -5px;
+        @extend .text-info;
+        // margin-left: -5px;
     }
 }
 
@@ -154,9 +149,44 @@ a:visited {
     transition: 500ms;
 }
 
+.photo-preview:hover>img {
+    transform: scale(1.05);
+    transition-duration: 0.5s;
+}
+
 .blur-load {
     background-size: cover;
     background-position: center;
+    filter: blur(10px);
+    width: calc(100% + 2rem);
+    height: calc(100% + 2rem);
+    top: -1rem;
+    left: -1rem;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+}
+
+.blur-load::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation: pulse 1.5s infinite;
+    background-color: black;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 // Custom scrollbar

@@ -27,12 +27,12 @@
             <div class="d-flex flex-column">
                 <a href="#" class="px-2 py-3 mb-2 small text-decoration-none text-white fw-medium"><i class="bi bi-house me-2"></i> HOME</a>
 
-                <a href="#" class="px-2 py-3 mb-2 small text-decoration-none text-white fw-medium"><i class="bi bi-building me-2"></i> OFFICE</a>
+                <a href="#" class="px-2 py-3 mb-2 small text-decoration-none text-white fw-medium"><i class="bi bi-building me-2"></i> STORY</a>
 
-                <a href="#" class="px-2 py-3 mb-2 small text-decoration-none text-white fw-medium"><i class="bi bi-hospital me-2"></i> HOSPITAL</a>
+                <a href="#" class="px-2 py-3 mb-2 small text-decoration-none text-white fw-medium"><i class="bi bi-hospital me-2"></i> PORTFOLIO</a>
 
                 <a href="<?= BASEURL ?>" class="px-2 py-3 mb-2 small text-decoration-none text-white fw-medium"><i class="bi bi-person me-2"></i>
-                    LOGIN</a>
+                    STORE</a>
             </div>
         </div>
     </div>
@@ -51,16 +51,16 @@
             <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">HOME</a>
         </div>
         <div class="d-none d-md-block align-self-center">
-            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">OFFICE</a>
+            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">STORY</a>
         </div>
         <div class="align-self-center fs-2 fw-medium handwriting">
             Kresna Setiana
         </div>
         <div class="d-none d-md-block align-self-center">
-            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">HOSPITAL</a>
+            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">PORTFOLIO</a>
         </div>
         <div class="d-none d-md-block align-self-center">
-            <a href="<?= BASEURL ?>login" class="navbar-item p-2 text-decoration-none text-white fw-medium">LOGIN</a>
+            <a href="<?= BASEURL ?>" class="navbar-item p-2 text-decoration-none text-white fw-medium">STORE</a>
         </div>
         <div class="d-block d-md-none align-self-center">
             <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium fs-6"><i class="bi bi-search"></i></a>
@@ -71,11 +71,13 @@
     <!-- carousel start -->
     <div id="mainCarousel" class="carousel slide carousel-fade vh-100 w-100 position-absolute top-0 z-0" data-bs-ride="carousel">
         <div class="carousel-inner h-100">
-            <div class="blur-load carousel-item h-100 active" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-1.jpg);">
-                <img data-src="img/header-bg-1.jpg" class="h-100 w-100 object-fit-cover transition img-thumb" style="opacity: 0;" alt="Header 1" />
+            <div class="position-relative carousel-item h-100 overflow-hidden active">
+                <div class="position-absolute h-100-w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-1.jpg);"></div>
+                <img data-src="img/header-bg-1.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 1" />
             </div>
-            <div class="blur-load carousel-item h-100" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-2.jpg);">
-                <img data-src="img/header-bg-2.jpg" class="h-100 w-100 object-fit-cover transition img-thumb" style="opacity: 0;" alt="Header 2" />
+            <div class="position-relative carousel-item h-100 overflow-hidden">
+                <div class="position-absolute h-100-w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-2.jpg);"></div>
+                <img data-src="img/header-bg-2.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 2" />
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
@@ -90,66 +92,78 @@
     <!-- carousel end -->
     <div class="vh-100 w-100"></div>
 
-    <div class="px-5">
+    <div class="px-3">
         <div class="container-fluid">
-            <div class="row g-5">
+            <div class="row g-4">
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="300" style="background-image: url(<?= BASEURL ?>img/thumbnail/1.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/1.jpg);"></div>
                         <img data-src="img/1.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="0" style="background-image: url(<?= BASEURL ?>img/thumbnail/2.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/2.jpg);"></div>
                         <img data-src="img/2.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="100" style="background-image: url(<?= BASEURL ?>img/thumbnail/3.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/3.jpg);"></div>
                         <img data-src="img/3.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="0" style="background-image: url(<?= BASEURL ?>img/thumbnail/4.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/4.jpg);"></div>
                         <img data-src="img/4.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="300" style="background-image: url(<?= BASEURL ?>img/thumbnail/5.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/5.jpg);"></div>
                         <img data-src="img/5.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="150" style="background-image: url(<?= BASEURL ?>img/thumbnail/6.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/6.jpg);"></div>
                         <img data-src="img/6.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="86" style="background-image: url(<?= BASEURL ?>img/thumbnail/7.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/7.jpg);"></div>
                         <img data-src="img/7.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="30" style="background-image: url(<?= BASEURL ?>img/thumbnail/8.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/8.jpg);"></div>
                         <img data-src="img/8.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="180" style="background-image: url(<?= BASEURL ?>img/thumbnail/9.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/9.jpg);"></div>
                         <img data-src="img/9.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="15" style="background-image: url(<?= BASEURL ?>img/thumbnail/10.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/10.jpg);"></div>
                         <img data-src="img/10.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="260" style="background-image: url(<?= BASEURL ?>img/thumbnail/11.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/11.jpg);"></div>
                         <img data-src="img/11.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer blur-load" data-aos="fade-up" data-aos-delay="10" style="background-image: url(<?= BASEURL ?>img/thumbnail/12.jpg);">
+                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
+                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/12.jpg);"></div>
                         <img data-src="img/12.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
                     </div>
                 </div>
