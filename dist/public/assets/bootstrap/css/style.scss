@@ -108,7 +108,7 @@ a:visited {
 }
 
 .breadcrumb {
-    @extend .bg-secondary-subtle, .py-1, .px-2, .rounded;
+    @extend .bg-secondary-subtle, .py-2, .px-3, .rounded-pill;
 }
 
 .inactive {

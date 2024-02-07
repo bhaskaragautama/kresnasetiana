@@ -23,19 +23,20 @@ class Model
 
    public function create($data)
    {
-      array_push($data, ['created_at' => date('Y-m-d H:i:s'), 'updated_at' => NULL]);
+      $data['created_at'] = date('Y-m-d H:i:s');
+      $data['updated_at'] = NULL;
       $fields = ':' . implode(', :', array_keys($data));
       $this->db->query("INSERT INTO `$this->table` (" . str_replace(':', '', $fields) . ") VALUES($fields)");
       foreach ($data as $key => $value) {
          $this->db->bind($key, $value);
       }
       $this->db->execute();
-      return $this->db->rowCount() >= 0 ? true : false;
+      return $this->db->lastInsertId();
    }
 
    public function update($data, $id)
    {
-      array_push($data, ['updated_at' => date('Y-m-d H:i:s')]);
+      $data['updated_at'] = date('Y-m-d H:i:s');
       $fields = [];
       foreach ($data as $key => $value) {
          array_push($fields, $key . '=:' . $key);

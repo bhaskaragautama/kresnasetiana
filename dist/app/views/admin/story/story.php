@@ -1,14 +1,14 @@
 <div class="hstack justify-content-between mb-4">
-    <h2 class="fw-semibold mb-0">Series</h2>
-    <a href="<?= BASEURL ?>series/form" class="btn btn-primary">New Series</a>
+    <h2 class="fw-semibold mb-0">Story</h2>
+    <a href="<?= BASEURL ?>story/form" class="btn btn-primary">New Story</a>
 </div>
 <div class="row">
     <div class="table-responsive p-0">
-        <table id="series-table" class="table table-hovered">
+        <table id="story-table" class="table table-hovered">
             <thead>
                 <tr>
                     <th class="text-nowrap">Num</th>
-                    <th class="text-nowrap">Series Name</th>
+                    <th class="text-nowrap">Story Name</th>
                     <th class="text-nowrap">Actions</th>
                 </tr>
             </thead>
@@ -20,8 +20,8 @@
                     echo '<td class="text-nowrap">' . $i . '</td>';
                     echo '<td class="text-nowrap">' . $value['category'] . '</td>';
                     echo '<td class="text-nowrap">
-                        <a href="' . BASEURL . 'series/form/' . $value['id'] . '" class="btn btn-warning btn-sm" title="Edit"><i class="bi bi-pencil-square"></i> Edit</a>
-                        <button type="button" class="btn btn-danger btn-sm delete-btn" data-delete="' . BASEURL . 'series/delete/' . $value['id'] . '" title="Delete"><i class="bi bi-trash"></i> Delete</a>
+                        <a href="' . BASEURL . 'story/form/' . $value['id'] . '" class="btn btn-warning btn-sm" title="Edit"><i class="bi bi-pencil-square"></i> Edit</a>
+                        <button type="button" class="btn btn-danger btn-sm delete-btn" data-delete="' . BASEURL . 'story/delete/' . $value['id'] . '" title="Delete"><i class="bi bi-trash"></i> Delete</a>
                     </td>';
                     echo '</tr>';
                     $i++;
@@ -33,7 +33,7 @@
 </div>
 <script>
     $(document).ready(function() {
-        $('#series-table').DataTable({
+        $('#story-table').DataTable({
             'columns': [{
                     'searchable': false
                 },

@@ -77,7 +77,7 @@
                             <ul class="navbar-nav ms-auto mb-2 mb-md-0">
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle text-lg-start text-end" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="bi bi-person-circle"></i> <?= $_SESSION['flow-name'] ?>
+                                        <i class="bi bi-person-circle"></i>
                                         <?= $_SESSION['kkName'] ?>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end position-absolute">

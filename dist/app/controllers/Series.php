@@ -30,23 +30,29 @@ class Series extends Controller
     {
         $id = $this->sanitizeInt($_POST['id']);
         $category = $this->sanitizeString($_POST['category']);
-        $data = [
-            "id_term" => $term,
-            "type" => $type,
-            "amount" => $amount,
-            "justification" => $just,
-            "date" => $date
-        ];
+        $data = ["category" => $category];
         if ($id == "") {
-            $save = $this->model("Flow_model")->create($data);
+            $save = $this->model("Series_model")->create($data);
         } else {
-            $save = $this->model("Flow_model")->update($data, $id);
+            $save = $this->model("Series_model")->update($data, $id);
         }
         if ($save) {
-            Flasher::setFlash("Data is successfully saved", "success");
+            Flasher::setFlash("Data is successfully been saved", "success");
         } else {
             Flasher::setFlash("Failed to save data", "danger");
         }
-        header('Location: ' . BASEURL . 'flow');
+        header('Location: ' . BASEURL . 'series');
+    }
+
+    public function delete($id)
+    {
+        $id = $this->sanitizeInt($id);
+        $delete = $this->model('Series_model')->delete($id);
+        if ($delete) {
+            Flasher::setFlash('Data is successfully been deleted', 'success');
+        } else {
+            Flasher::setFlash('Failed to delete data', 'danger');
+        }
+        header('Location: ' . BASEURL . 'series');
     }
 }

@@ -8254,12 +8254,12 @@ textarea.form-control-lg {
   padding-left: 0.25rem !important;
 }
 
-.px-2, .breadcrumb {
+.px-2 {
   padding-right: 0.5rem !important;
   padding-left: 0.5rem !important;
 }
 
-.px-3 {
+.px-3, .breadcrumb {
   padding-right: 1rem !important;
   padding-left: 1rem !important;
 }
@@ -8279,12 +8279,12 @@ textarea.form-control-lg {
   padding-bottom: 0 !important;
 }
 
-.py-1, .breadcrumb {
+.py-1 {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
 }
 
-.py-2 {
+.py-2, .breadcrumb {
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
 }
@@ -9059,7 +9059,7 @@ a:visited {
   pointer-events: auto !important;
 }
 
-.rounded, .breadcrumb {
+.rounded {
   border-radius: var(--bs-border-radius) !important;
 }
 
@@ -9091,7 +9091,7 @@ a:visited {
   border-radius: 50% !important;
 }
 
-.rounded-pill {
+.rounded-pill, .breadcrumb {
   border-radius: var(--bs-border-radius-pill) !important;
 }
 
@@ -13100,12 +13100,12 @@ a:visited {
   padding-left: 0.25rem !important;
 }
 
-.px-2, .breadcrumb {
+.px-2 {
   padding-right: 0.5rem !important;
   padding-left: 0.5rem !important;
 }
 
-.px-3 {
+.px-3, .breadcrumb {
   padding-right: 1rem !important;
   padding-left: 1rem !important;
 }
@@ -13125,12 +13125,12 @@ a:visited {
   padding-bottom: 0 !important;
 }
 
-.py-1, .breadcrumb {
+.py-1 {
   padding-top: 0.25rem !important;
   padding-bottom: 0.25rem !important;
 }
 
-.py-2 {
+.py-2, .breadcrumb {
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important;
 }
@@ -13905,7 +13905,7 @@ a:visited {
   pointer-events: auto !important;
 }
 
-.rounded, .breadcrumb {
+.rounded {
   border-radius: var(--bs-border-radius) !important;
 }
 
@@ -13937,7 +13937,7 @@ a:visited {
   border-radius: 50% !important;
 }
 
-.rounded-pill {
+.rounded-pill, .breadcrumb {
   border-radius: var(--bs-border-radius-pill) !important;
 }
 
