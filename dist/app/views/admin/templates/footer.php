@@ -36,6 +36,10 @@
             $('#modal-delete-btn').attr('href', $(this).data('delete'));
             $('#modal-delete').modal('show');
         });
+        $('.nt-delete-btn').click(function() {
+            $('#modal-delete-btn').attr('href', $(this).data('delete'));
+            $('#modal-delete').modal('show');
+        });
     });
 </script>
 

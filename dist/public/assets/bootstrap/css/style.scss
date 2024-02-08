@@ -19,6 +19,19 @@ $focus-ring-width: 0.1remt;
 $focus-ring-opacity: 0.15t;
 $focus-ring-color: rgba(#212529, 0.25);
 
+// add aspect ratio for portrait
+$aspect-ratios: (
+  "1x1": 100%,
+  "4x3": calc(3 / 4 * 100%),
+  "landscape": calc(3 / 4 * 100%),
+  "portrait": calc((6 / 4 * 100%) + 0.4em),
+  "3x4": calc(4 / 3 * 100%),
+  "16x9": calc(9 / 16 * 100%),
+  "9x16": calc(16 / 9 * 100%),
+  "21x9": calc(9 / 21 * 100%),
+  "9x21": calc(21 / 9 * 100%)
+);
+
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 @import "../../../../../node_modules/bootstrap/scss/variables";
 @import "../../../../../node_modules/bootstrap/scss/variables-dark";
@@ -187,6 +200,10 @@ a:visited {
     100% {
         opacity: 0;
     }
+}
+
+textarea {
+    @extend .rounded-3;
 }
 
 // Custom scrollbar

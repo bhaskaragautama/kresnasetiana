@@ -35,6 +35,6 @@ class Controller
    //redirects
    public function lost()
    {
-      require_once '../app/views/general/lost.php';
+      require_once '../app/views/user/general/lost.php';
    }
 }

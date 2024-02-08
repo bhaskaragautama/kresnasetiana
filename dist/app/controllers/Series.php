@@ -47,6 +47,12 @@ class Series extends Controller
     public function delete($id)
     {
         $id = $this->sanitizeInt($id);
+        $check = $this->model('Story_model')->checkSeries($id);
+        if($check > 0) {
+            Flasher::setFlash('This series is used by story data', 'danger');
+            header('Location: ' . BASEURL . 'series');
+            die;
+        }
         $delete = $this->model('Series_model')->delete($id);
         if ($delete) {
             Flasher::setFlash('Data is successfully been deleted', 'success');

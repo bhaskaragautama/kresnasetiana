@@ -48,8 +48,8 @@
                 </ul>
                 <div class="py-2 px-3 text-secondary small text-center text-lg-start">PORTFOLIO</div>
                 <ul class="list-unstyled d-flex flex-column fw-semibold">
-                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'tags' ? 'active' : '' ?>">
-                        <a href="<?= BASEURL . 'tags'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-tags me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Tags</span></a>
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'tag' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'tag'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-tags me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Tags</span></a>
                     </li>
                     <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'photo' ? 'active' : '' ?>">
                         <a href="<?= BASEURL . 'photo'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-images me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Photo</span></a>
@@ -105,4 +105,4 @@
                         </ul>
                     </div>
                 </div>
-                <div class="p-5 bg-white position-relative">
+                <div class="px-5 py-4 bg-white position-relative">

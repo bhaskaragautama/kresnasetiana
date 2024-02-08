@@ -7160,12 +7160,32 @@ textarea.form-control-lg {
   --bs-aspect-ratio: 75%;
 }
 
+.ratio-landscape {
+  --bs-aspect-ratio: 75%;
+}
+
+.ratio-portrait {
+  --bs-aspect-ratio: calc(150% + 0.4em);
+}
+
+.ratio-3x4 {
+  --bs-aspect-ratio: 133.3333333333%;
+}
+
 .ratio-16x9 {
   --bs-aspect-ratio: 56.25%;
 }
 
+.ratio-9x16 {
+  --bs-aspect-ratio: 177.7777777778%;
+}
+
 .ratio-21x9 {
   --bs-aspect-ratio: 42.8571428571%;
+}
+
+.ratio-9x21 {
+  --bs-aspect-ratio: 233.3333333333%;
 }
 
 .fixed-top {
@@ -9075,7 +9095,7 @@ a:visited {
   border-radius: var(--bs-border-radius) !important;
 }
 
-.rounded-3 {
+.rounded-3, textarea {
   border-radius: var(--bs-border-radius-lg) !important;
 }
 
@@ -13921,7 +13941,7 @@ a:visited {
   border-radius: var(--bs-border-radius) !important;
 }
 
-.rounded-3 {
+.rounded-3, textarea {
   border-radius: var(--bs-border-radius-lg) !important;
 }
 

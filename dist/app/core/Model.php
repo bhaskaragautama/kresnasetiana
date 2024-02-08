@@ -39,7 +39,7 @@ class Model
       $data['updated_at'] = date('Y-m-d H:i:s');
       $fields = [];
       foreach ($data as $key => $value) {
-         array_push($fields, $key . '=:' . $key);
+         array_push($fields, '`'.$key.'`' . '=:' . $key);
       }
       $fields = implode(', ', $fields);
       $this->db->query("UPDATE `$this->table` SET $fields WHERE `id`=:id");
