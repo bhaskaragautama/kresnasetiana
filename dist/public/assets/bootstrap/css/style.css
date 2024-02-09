@@ -7165,7 +7165,7 @@ textarea.form-control-lg {
 }
 
 .ratio-portrait {
-  --bs-aspect-ratio: calc(150% + 0.4em);
+  --bs-aspect-ratio: calc(150% + 0.75rem);
 }
 
 .ratio-3x4 {
