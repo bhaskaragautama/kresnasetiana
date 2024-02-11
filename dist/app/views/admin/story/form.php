@@ -48,9 +48,9 @@
                         <select class="form-select" name="position[' . $value['id'] . ']">
                             <option value="">-- Choose text position --</option>
                             <option value="1" ' . ($value['desc_position'] == 1 ? 'selected' : '') . '>Top</option>
-                            <option value="2" ' . ($value['desc_position'] == 2 ? 'selected' : '') . '>Right</option>
+                            <option value="2" ' . ($value['desc_position'] == 2 ? 'selected' : '') . '>Right (Mobile bottom)</option>
                             <option value="3" ' . ($value['desc_position'] == 3 ? 'selected' : '') . '>Bottom</option>
-                            <option value="4" ' . ($value['desc_position'] == 4 ? 'selected' : '') . '>Left</option>
+                            <option value="4" ' . ($value['desc_position'] == 4 ? 'selected' : '') . '>Left (Mobile top)</option>
                         </select>
                     </div>
                     <textarea class="form-control flex-grow-1" placeholder="Add Story" name="desc[' . $value['id'] . ']">' . $value['desc'] . '</textarea>
@@ -62,62 +62,3 @@
     <a href="<?= BASEURL ?>story" class="btn btn-secondary">Back</a>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
-<!-- <div class="container-fluid"> -->
-<div class="row justify-content-center g-3 mb-3">
-    <?php
-    $content = '';
-    $count = 0;
-    $orientation = '';
-    foreach ($data['images'] as $key => $value) {
-        if ($value['orientation'] == 0) {
-            $content .= '<div class="col-md-4">
-                    <div class="ratio ratio-portrait">
-                        <img src="' . IMGURL . $value['picture'] . '" class="object-fit-cover shadow-sm">
-                    </div>
-                </div>';
-            $orientation .= 'p';
-        } else {
-            $content .= '<div class="col-md-8">
-                    <div class="ratio ratio-landscape">
-                        <img src="' . IMGURL . $value['picture'] . '" class="object-fit-cover shadow-sm">
-                    </div>
-                </div>';
-            $orientation .= 'l';
-        }
-        $count++;
-        if ($count == 2) {
-            if ($orientation == 'pl' || $orientation == 'lp') {
-                echo $content;
-                $content = '';
-                $count = 0;
-                $orientation = '';
-            } else if ($orientation == 'll') {
-                echo str_replace('col-md-8', 'col-md-6', $content);
-                $content = '';
-                $count = 0;
-                $orientation = '';
-            } else if ($orientation == 'pp') {
-                $count--;
-            } else if ($orientation == 'ppl') {
-                echo str_replace('col-md-4', 'col-md-6', $content);
-                $content = '<div class="col-md-8">
-                        <div class="ratio ratio-landscape">
-                            <img src="' . IMGURL . $value['picture'] . '" class="object-fit-cover shadow-sm">
-                        </div>
-                    </div>';
-                $count = 1;
-                $orientation = 'l';
-            } else if ($orientation == 'ppp') {
-                echo $content;
-                $content = '';
-                $count = 0;
-                $orientation = '';
-            }
-        }
-        if ($value['desc'] != '') {
-        }
-    }
-    echo $content;
-    ?>
-</div>
-<!-- </div> -->

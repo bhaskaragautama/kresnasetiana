@@ -18,7 +18,8 @@ class Story_pict_model extends Model
         return $this->db->rowCount();
     }
 
-    public function deleteByStory($id) {
+    public function deleteByStory($id)
+    {
         $this->db->query("DELETE FROM $this->table WHERE story_id=:id");
         $this->db->bind('id', $id);
         $this->db->execute();

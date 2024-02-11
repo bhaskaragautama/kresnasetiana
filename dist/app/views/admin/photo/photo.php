@@ -19,7 +19,7 @@
                 foreach ($data as $key => $value) {
                     echo '<tr class="align-middle">';
                     echo '<td class="text-nowrap">' . $i . '</td>';
-                    echo '<td class="text-nowrap"><a href="#" class="show-photo-detail" data-pict="' . $value['picture'] . '" data-orientation="' . $value['orientation'] . '">' . $value['title'] . '<a></td>';
+                    echo '<td class="text-nowrap"><a href="#" class="show-photo-detail" data-pict="' . $value['picture'] . '" data-orientation="' . $value['orientation'] . '">' . $value['title'] . '</a></td>';
                     echo '<td class="text-nowrap">' . ($value['is_best'] == 1 ? '<i class="bi bi-check-lg text-success"></i>' : '<i class="bi bi-x-lg text-danger"></i>') . '</td>';
                     echo '<td class="text-nowrap">
                         <a href="' . BASEURL . 'photo/form/' . $value['id'] . '" class="btn btn-warning btn-sm" title="Edit"><i class="bi bi-pencil-square"></i> Edit</a>

@@ -64,6 +64,12 @@
                         <a href="<?= BASEURL . 'item'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-bag-check me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Item</span></a>
                     </li>
                 </ul>
+                <div class="py-2 px-3 text-secondary small text-center text-lg-start">MANAGE</div>
+                <ul class="list-unstyled d-flex flex-column fw-semibold">
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'best' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'best'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-hand-thumbs-up me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Best Photo</span></a>
+                    </li>
+                </ul>
             </div>
             <div class="<?= !isset($_SESSION['flow-menu']) ? 'col-md-10 offset-md-2' : ($_SESSION['flow-menu'] == 1 ? 'col-md-10 offset-md-2' : 'col-md-12') ?> p-0 min-vh-100 bg-white position-relative" id="main-content">
                 <nav class="navbar navbar-expand-md bg-body-tertiary">
@@ -81,7 +87,8 @@
                                         <?= $_SESSION['kkName'] ?>
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end position-absolute">
-                                        <li><a class="dropdown-item" href="<?= BASEURL . 'login/logout'; ?>">Logout</a></li>
+                                        <li><a class="dropdown-item transition" href="<?= BASEURL . 'profile'; ?>">Profile</a></li>
+                                        <li><a class="dropdown-item transition" href="<?= BASEURL . 'login/logout'; ?>">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>

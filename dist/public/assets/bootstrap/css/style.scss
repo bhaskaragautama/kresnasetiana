@@ -6,6 +6,7 @@
 @import "../../../../../node_modules/bootstrap/scss/functions";
 
 // 2. Include any default variable overrides here
+$enable-negative-margins: true;
 // custom font
 $font-family-sans-serif: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif,
@@ -69,6 +70,10 @@ $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w
 @import "../../../../../node_modules/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+.font-lustria * {
+    font-family: 'Lustria', serif;
+}
+
 .flasher {
     @extend .position-fixed, .top-0, .end-0, .mt-3, .me-3;
     z-index: 9999;
@@ -205,6 +210,23 @@ a:visited {
 
 textarea {
     @extend .rounded-3;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.dropdown-menu {
+    @extend .border-0, .shadow, .rounded-2, .mt-2;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.dropdown-item:hover {
+    margin-left: 3px;
+    color: black !important;
+    background: transparent;
 }
 
 // Custom scrollbar

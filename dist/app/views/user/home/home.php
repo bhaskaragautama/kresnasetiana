@@ -5,14 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kresna Setiana</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lustria&family=Ephesis&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="<?= BASEURL ?>assets/bootstrap/css/style.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 
-<body>
+<body class="font-lustria">
     <!-- offcanvas start -->
     <div class="offcanvas offcanvas-top bg-black text-white" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel" data-bs-animation="fade">
         <div class="offcanvas-header">
@@ -39,134 +39,141 @@
     <!-- offcanvas end -->
 
     <!-- spacer start -->
-    <div class="p-2 p-sm-3 transition position-relative z-2" id="top-spacer"></div>
+    <!-- <div class="p-2 p-sm-3 transition position-relative z-2" id="top-spacer"></div> -->
     <!-- spacer end -->
 
     <!-- navbar start -->
-    <div id="navbar" class="d-flex flex-row px-3 px-lg-5 justify-content-between justify-content-md-around small sticky-top transition text-white">
-        <div class="d-block d-md-none align-self-center">
-            <a class="p-2 text-decoration-none text-white fw-medium fs-6" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav"><i class="bi bi-list"></i></a>
-        </div>
-        <div class="d-none d-md-block align-self-center">
-            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">HOME</a>
-        </div>
-        <div class="d-none d-md-block align-self-center">
-            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">STORY</a>
-        </div>
-        <div class="align-self-center fs-2 fw-medium handwriting">
-            Kresna Setiana
-        </div>
-        <div class="d-none d-md-block align-self-center">
-            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">PORTFOLIO</a>
-        </div>
-        <div class="d-none d-md-block align-self-center">
-            <a href="<?= BASEURL ?>" class="navbar-item p-2 text-decoration-none text-white fw-medium">STORE</a>
-        </div>
-        <div class="d-block d-md-none align-self-center">
-            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium fs-6"><i class="bi bi-search"></i></a>
+    <div id="navbar-container" class="position-relative z-3" style="display: none;">
+        <div id="navbar" class="d-flex flex-row px-3 py-2 px-lg-5 justify-content-between justify-content-md-around small fixed-top transition text-white bg-dark">
+            <div class="d-block d-md-none align-self-center">
+                <a class="p-2 text-decoration-none text-white fw-semibold fs-6" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav"><i class="bi bi-list"></i></a>
+            </div>
+            <div class="d-none d-md-block align-self-center">
+                <a href="<?= BASEURL ?>" class="navbar-item p-2 text-decoration-none text-white fw-semibold">HOME</a>
+            </div>
+            <div class="d-none d-md-block align-self-center">
+                <div class="dropdown">
+                    <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold" data-bs-toggle="dropdown" aria-expanded="false">
+                        STORY<i class="ms-1 bi bi-chevron-down small"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <?php
+                        foreach ($data['series'] as $key => $value) {
+                            echo '<li><a class="dropdown-item transition small" href="' . BASEURL . 'stories/' . $value['id'] . '">' . $value['category'] . '</a></li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="align-self-center fs-2 fw-medium handwriting">
+                Kresna Setiana
+            </div>
+            <div class="d-none d-md-block align-self-center">
+                <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold">PORTFOLIO</a>
+            </div>
+            <div class="d-none d-md-block align-self-center">
+                <div class="dropdown">
+                    <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold" data-bs-toggle="dropdown" aria-expanded="false">
+                        STORE<i class="ms-1 bi bi-chevron-down small"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <?php
+                        foreach ($data['collection'] as $key => $value) {
+                            echo '<li><a class="dropdown-item transition small" href="#">' . $value['category'] . '</a></li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-block d-md-none align-self-center">
+                <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold fs-6"><i class="bi bi-search"></i></a>
+            </div>
         </div>
     </div>
     <!-- navbar end -->
 
     <!-- carousel start -->
-    <div id="mainCarousel" class="carousel slide carousel-fade vh-100 w-100 position-absolute top-0 z-0" data-bs-ride="carousel">
-        <div class="carousel-inner h-100">
-            <div class="position-relative carousel-item h-100 overflow-hidden active">
-                <div class="position-absolute h-100-w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-1.jpg);"></div>
-                <img data-src="img/header-bg-1.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 1" />
-            </div>
-            <div class="position-relative carousel-item h-100 overflow-hidden">
-                <div class="position-absolute h-100-w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-2.jpg);"></div>
-                <img data-src="img/header-bg-2.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 2" />
+    <div id="carousel-container" class="vh-100 w-100 position-absolute top-0 start-0">
+        <div class="container-fluid h-100">
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-10 col-sm-8 col-md-7 col-lg-5">
+                    <div id="mainCarousel" class="carousel slide carousel-fade shadow" data-bs-ride="carousel">
+                        <div class="carousel-inner h-100">
+                            <div class="position-relative carousel-item h-100 overflow-hidden active">
+                                <div class="position-absolute h-100-w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-1.jpg);"></div>
+                                <img data-src="img/header-bg-1.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 1" />
+                            </div>
+                            <div class="position-relative carousel-item h-100 overflow-hidden">
+                                <div class="position-absolute h-100-w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-2.jpg);"></div>
+                                <img data-src="img/header-bg-2.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 2" />
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    <!-- carousel end -->
+                </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
-    <!-- carousel end -->
-    <div class="vh-100 w-100"></div>
 
-    <div class="px-3">
+    <!-- home nav start -->
+    <div id="navbar-home" class="py-4 px-4 px-md-5 mb-5 vh-100 d-flex flex-column justify-content-between">
+        <div class="d-flex justify-content-between">
+            <a href="<?= BASEURL ?>" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Home</a>
+            <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Kresna Setiana</a>
+            <div class="dropdown align-self-center">
+                <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Story<i class="ms-1 bi bi-chevron-down small"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <?php
+                    foreach ($data['series'] as $key => $value) {
+                        echo '<li><a class="dropdown-item transition small" href="' . BASEURL . 'stories/' . $value['id'] . '">' . $value['category'] . '</a></li>';
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Portfolio</a>
+            <div class="dropdown align-self-center">
+                <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Store<i class="ms-1 bi bi-chevron-down small"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <?php
+                    foreach ($data['collection'] as $key => $value) {
+                        echo '<li><a class="dropdown-item transition small" href="#">' . $value['category'] . '</a></li>';
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- home nav end -->
+
+    <!-- content start -->
+    <div class="pt-5 px-3">
+        <h2 class="text-center my-5 fs-3">Some of My Best</h2>
         <div class="container-fluid">
-            <div class="row g-4">
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/1.jpg);"></div>
-                        <img data-src="img/1.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/2.jpg);"></div>
-                        <img data-src="img/2.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/3.jpg);"></div>
-                        <img data-src="img/3.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/4.jpg);"></div>
-                        <img data-src="img/4.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/5.jpg);"></div>
-                        <img data-src="img/5.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/6.jpg);"></div>
-                        <img data-src="img/6.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/7.jpg);"></div>
-                        <img data-src="img/7.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/8.jpg);"></div>
-                        <img data-src="img/8.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/9.jpg);"></div>
-                        <img data-src="img/9.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/10.jpg);"></div>
-                        <img data-src="img/10.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/11.jpg);"></div>
-                        <img data-src="img/11.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
-                <div class="col-sm-6 col-lg-4">
-                    <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up">
-                        <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/12.jpg);"></div>
-                        <img data-src="img/12.jpg" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
-                    </div>
-                </div>
+            <div class="row g-4 justify-content-center">
+                <?php
+                foreach ($data['best'] as $key => $value) {
+                    echo '<div class="col-sm-6 col-lg-4">
+                            <div class="photo-preview ratio ratio-16x9 overflow-hidden pointer" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '">
+                                <div class="position-absolute blur-load" style="background-image: url(' . THUMBURL . $value['picture'] . ');"></div>
+                                <img data-src="' . IMGURL . $value['picture'] . '" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
+                            </div>
+                        </div>';
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -184,22 +191,13 @@
 
         function scrollBar() {
             let windowScroll = $(window).scrollTop();
-            let navbarOffset = $("#navbar").offset().top;
-            if (windowScroll != navbarOffset || windowScroll == 0) {
-                if (
-                    $("#navbar").hasClass("bg-black") &&
-                    $("#top-spacer").hasClass("bg-black")
-                ) {
-                    $("#navbar").removeClass("bg-black");
-                    $("#top-spacer").removeClass("bg-black");
+            if (windowScroll > 600) {
+                if ($('#navbar-container').css('display') == 'none') {
+                    $('#navbar-container').fadeIn('fast');
                 }
             } else {
-                if (
-                    !$("#navbar").hasClass("bg-black") &&
-                    !$("#top-spacer").hasClass("bg-black")
-                ) {
-                    $("#navbar").addClass("bg-black");
-                    $("#top-spacer").addClass("bg-black");
+                if ($('#navbar-container').css('display') == 'block') {
+                    $('#navbar-container').fadeOut('fast');
                 }
             }
         }

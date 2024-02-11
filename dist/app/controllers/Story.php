@@ -70,11 +70,9 @@ class Story extends Controller
             $save = $this->model("Story_model")->update($data, $id);
             $this->model('Story_pict_model')->resetBest($id);
             foreach ($_POST['desc'] as $key => $value) {
-                if ($value != '') {
-                    $desc = $this->sanitizeString($value);
-                    $position = $this->sanitizeInt($_POST['position'][$key]);
-                    $this->model('Story_pict_model')->update(['desc' => $desc, 'desc_position' => $position], $key);
-                }
+                $desc = $this->sanitizeString($value);
+                $position = ($_POST['position'][$key] == '' || $desc == '' ? NULL : $this->sanitizeInt($_POST['position'][$key]));
+                $this->model('Story_pict_model')->update(['desc' => $desc, 'desc_position' => $position], $key);
             }
             foreach ($_POST['best'] as $key => $value) {
                 $this->model('Story_pict_model')->update(['is_best' => 1], $key);
@@ -95,7 +93,7 @@ class Story extends Controller
         } else {
             Flasher::setFlash("Failed to save data", "danger");
         }
-        header('Location: ' . BASEURL . 'story' . (!empty($_FILES['photo']['name'][0]) ? '/form/' . $save : ''));
+        header('Location: ' . BASEURL . 'story' . (!empty($_FILES['photo']['name'][0]) ? '/form/' . ($id == '' ? $save : $id) : ''));
     }
 
     public function deletePhoto($photoId, $storyId)

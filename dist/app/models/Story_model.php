@@ -18,6 +18,13 @@ class Story_model extends Model
         return $this->db->result();
     }
 
+    public function readByCategory($catId)
+    {
+        $this->db->query("SELECT `stories`.*, `stories_cat`.`category`, (SELECT `picture` FROM `stories_pict` WHERE `stories`.`id`=stories_pict.`story_id` LIMIT 1) AS `picture` FROM `stories` JOIN `stories_cat` ON `stories`.`cat_id`=`stories_cat`.`id` WHERE `stories`.`cat_id`=:cat_id");
+        $this->db->bind('cat_id', $catId);
+        return $this->db->results();
+    }
+
     public function checkSeries($seriesId)
     {
         $this->db->query("SELECT * FROM $this->table WHERE cat_id=:cat_id");
