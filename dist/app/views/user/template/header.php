@@ -53,7 +53,7 @@
             <div class="d-none d-md-block align-self-center">
                 <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold">Portfolio</a>
             </div>
-            <div class="d-none d-md-block align-self-center">
+            <div class="align-self-center">
                 <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold">Kresna Setiana</a>
             </div>
             <div class="d-none d-md-block align-self-center">
@@ -94,10 +94,11 @@
     <!-- home nav start -->
     <div id="navbar-home" class="py-4 px-4 px-md-5 mb-5 d-flex flex-column justify-content-between">
         <div class="d-flex justify-content-between">
-            <a href="<?= BASEURL ?>" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Home</a>
-            <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Portfolio</a>
+            <a class="p-2 text-decoration-none text-black fw-semibold fs-6 p-1 d-block d-md-none align-self-center" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav"><i class="bi bi-list"></i></a>
+            <a href="<?= BASEURL ?>" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center d-none d-md-block">Home</a>
+            <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center d-none d-md-block">Portfolio</a>
             <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Kresna Setiana</a>
-            <div class="dropdown align-self-center">
+            <div class="dropdown align-self-center d-none d-md-block">
                 <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1" data-bs-toggle="dropdown" aria-expanded="false">
                     Store<i class="ms-1 bi bi-chevron-down small"></i>
                 </a>
@@ -109,7 +110,7 @@
                     ?>
                 </ul>
             </div>
-            <div class="dropdown align-self-center">
+            <div class="dropdown align-self-center d-none d-md-block">
                 <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1" data-bs-toggle="dropdown" aria-expanded="false">
                     Story<i class="ms-1 bi bi-chevron-down small"></i>
                 </a>
@@ -121,6 +122,7 @@
                     ?>
                 </ul>
             </div>
+            <a href="#" class="navbar-item p-2 text-decoration-none text-black fw-semibold fs-6 p-1 d-block d-md-none align-self-center"><i class="bi bi-search"></i></a>
         </div>
     </div>
     <!-- home nav end -->
