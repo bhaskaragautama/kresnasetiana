@@ -50,8 +50,13 @@
                 <div>' . $value['title'] . '</div>
                 <div class="small">IDR ' . number_format($value['idr'], 0, ',', '.') . '</div>
             </div>';
-            echo '<div class="position-absolute d-flex flex-row gap-2 top-0 start-0 p-2 w-100">
-                <a href="' . BASEURL . 'item/photo/' . $data['item']['id'] . '/' . $value['id'] . '" class="btn btn-warning btn-sm rounded-1 shadow" title="Edit"><i class="bi bi-pencil"></i></a>
+            echo '<div class="position-absolute d-flex flex-row gap-2 top-0 start-0 p-2 w-100">';
+            if ($value['is_thumb'] == 1) {
+                echo '<span class="bg-primary py-1 px-2 rounded-1" title="Thumbnail"><i class="bi bi-check-lg text-white"></i></span>';
+            } else {
+                echo '<a href="' . BASEURL . 'item/setthumbnail/' . $data['item']['id'] . '/' . $value['id'] . '" class="btn btn-secondary btn-sm rounded-1 shadow" title="Set thumbnail"><i class="bi bi-check-lg"></i></a>';
+            }
+            echo '<a href="' . BASEURL . 'item/photo/' . $data['item']['id'] . '/' . $value['id'] . '" class="btn btn-warning btn-sm rounded-1 shadow" title="Edit"><i class="bi bi-pencil"></i></a>
                 <button class="btn btn-danger btn-sm rounded-1 me-auto shadow nt-delete-btn" title="Delete" data-delete="' . BASEURL . 'item/deletephoto/' . $value['id'] . '/' . $data['item']['id'] . '"><i class="bi bi-trash"></i></button>
                 ' . ($value['is_best'] == 1 ? '<button type="button" class="btn btn-success btn-sm rounded-1 shadow" title="Best"><i class="bi bi-hand-thumbs-up"></i></button>' : '') . '
             </div>';

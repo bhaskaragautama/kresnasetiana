@@ -5,14 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kresna Setiana</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lustria&family=Ephesis&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="<?= BASEURL ?>assets/bootstrap/css/style.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="<?= BASEURL ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
-<body>
+<body class="font-lustria">
     <!-- offcanvas start -->
     <div class="offcanvas offcanvas-top bg-black text-white" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel" data-bs-animation="fade">
         <div class="offcanvas-header">
@@ -38,32 +41,86 @@
     </div>
     <!-- offcanvas end -->
 
-    <!-- spacer start -->
-    <div class="p-2 p-sm-3 transition position-relative z-2" id="top-spacer"></div>
-    <!-- spacer end -->
-
     <!-- navbar start -->
-    <div id="navbar" class="d-flex flex-row px-3 px-lg-5 justify-content-between justify-content-md-around small sticky-top transition text-white">
-        <div class="d-block d-md-none align-self-center">
-            <a class="p-2 text-decoration-none text-white fw-medium fs-6" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav"><i class="bi bi-list"></i></a>
-        </div>
-        <div class="d-none d-md-block align-self-center">
-            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">HOME</a>
-        </div>
-        <div class="d-none d-md-block align-self-center">
-            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">STORY</a>
-        </div>
-        <div class="align-self-center fs-2 fw-medium handwriting">
-            Kresna Setiana
-        </div>
-        <div class="d-none d-md-block align-self-center">
-            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium">PORTFOLIO</a>
-        </div>
-        <div class="d-none d-md-block align-self-center">
-            <a href="<?= BASEURL ?>" class="navbar-item p-2 text-decoration-none text-white fw-medium">STORE</a>
-        </div>
-        <div class="d-block d-md-none align-self-center">
-            <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-medium fs-6"><i class="bi bi-search"></i></a>
+    <div id="navbar-container" class="position-relative z-3" style="display: none;">
+        <div id="navbar" class="d-flex flex-row px-3 py-3 px-lg-5 justify-content-between justify-content-md-around fixed-top transition text-white bg-dark">
+            <div class="d-block d-md-none align-self-center">
+                <a class="p-2 text-decoration-none text-white fw-semibold fs-6" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav"><i class="bi bi-list"></i></a>
+            </div>
+            <div class="d-none d-md-block align-self-center">
+                <a href="<?= BASEURL ?>" class="navbar-item p-2 text-decoration-none text-white fw-semibold">Home</a>
+            </div>
+            <div class="d-none d-md-block align-self-center">
+                <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold">Portfolio</a>
+            </div>
+            <div class="d-none d-md-block align-self-center">
+                <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold">Kresna Setiana</a>
+            </div>
+            <div class="d-none d-md-block align-self-center">
+                <div class="dropdown">
+                    <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold" data-bs-toggle="dropdown" aria-expanded="false">
+                        Store<i class="ms-1 bi bi-chevron-down small"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <?php
+                        foreach ($data['collection'] as $key => $value) {
+                            echo '<li><a class="dropdown-item transition small" href="#">' . $value['category'] . '</a></li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-none d-md-block align-self-center">
+                <div class="dropdown">
+                    <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold" data-bs-toggle="dropdown" aria-expanded="false">
+                        Story<i class="ms-1 bi bi-chevron-down small"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <?php
+                        foreach ($data['series'] as $key => $value) {
+                            echo '<li><a class="dropdown-item transition small" href="' . BASEURL . 'home/story/' . $value['id'] . '">' . $value['category'] . '</a></li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-block d-md-none align-self-center">
+                <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold fs-6"><i class="bi bi-search"></i></a>
+            </div>
         </div>
     </div>
     <!-- navbar end -->
+
+    <!-- home nav start -->
+    <div id="navbar-home" class="py-4 px-4 px-md-5 mb-5 d-flex flex-column justify-content-between">
+        <div class="d-flex justify-content-between">
+            <a href="<?= BASEURL ?>" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Home</a>
+            <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Portfolio</a>
+            <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Kresna Setiana</a>
+            <div class="dropdown align-self-center">
+                <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Store<i class="ms-1 bi bi-chevron-down small"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <?php
+                    foreach ($data['collection'] as $key => $value) {
+                        echo '<li><a class="dropdown-item transition small" href="#">' . $value['category'] . '</a></li>';
+                    }
+                    ?>
+                </ul>
+            </div>
+            <div class="dropdown align-self-center">
+                <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Story<i class="ms-1 bi bi-chevron-down small"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <?php
+                    foreach ($data['series'] as $key => $value) {
+                        echo '<li><a class="dropdown-item transition small" href="' . BASEURL . 'home/story/' . $value['id'] . '">' . $value['category'] . '</a></li>';
+                    }
+                    ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- home nav end -->

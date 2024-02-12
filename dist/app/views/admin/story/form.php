@@ -45,6 +45,10 @@
                             <input class="form-check-input" type="checkbox" role="switch" id="best-' . $value['id'] . '" name="best[' . $value['id'] . ']" value="1" ' . ($value['is_best'] == 1 ? 'checked' : '') . '>
                             <label class="form-check-label text-nowrap" for="best-' . $value['id'] . '">Set best</label>
                         </div>
+                        <div class="form-check form-switch align-self-center">
+                            <input class="form-check-input check-thumb" type="checkbox" role="switch" id="thumb-' . $value['id'] . '" name="thumb[' . $value['id'] . ']" value="1" ' . ($value['is_thumb'] == 1 ? 'checked' : '') . '>
+                            <label class="form-check-label text-nowrap" for="best-' . $value['id'] . '">Thumbnail</label>
+                        </div>
                         <select class="form-select" name="position[' . $value['id'] . ']">
                             <option value="">-- Choose text position --</option>
                             <option value="1" ' . ($value['desc_position'] == 1 ? 'selected' : '') . '>Top</option>
@@ -62,3 +66,14 @@
     <a href="<?= BASEURL ?>story" class="btn btn-secondary">Back</a>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
+
+<script>
+    $(document).ready(function() {
+        $('.check-thumb').change(function() {
+            if ($('.check-thumb:checked').length > 2) {
+                setFlash('Max two thumbnails', 'danger');
+                $(this).prop('checked', false);
+            }
+        });
+    });
+</script>

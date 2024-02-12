@@ -52,24 +52,10 @@
                 <a href="<?= BASEURL ?>" class="navbar-item p-2 text-decoration-none text-white fw-semibold">HOME</a>
             </div>
             <div class="d-none d-md-block align-self-center">
-                <div class="dropdown">
-                    <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold" data-bs-toggle="dropdown" aria-expanded="false">
-                        STORY<i class="ms-1 bi bi-chevron-down small"></i>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php
-                        foreach ($data['series'] as $key => $value) {
-                            echo '<li><a class="dropdown-item transition small" href="' . BASEURL . 'stories/' . $value['id'] . '">' . $value['category'] . '</a></li>';
-                        }
-                        ?>
-                    </ul>
-                </div>
+                <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold">PORTFOLIO</a>
             </div>
             <div class="align-self-center fs-2 fw-medium handwriting">
                 Kresna Setiana
-            </div>
-            <div class="d-none d-md-block align-self-center">
-                <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold">PORTFOLIO</a>
             </div>
             <div class="d-none d-md-block align-self-center">
                 <div class="dropdown">
@@ -80,6 +66,20 @@
                         <?php
                         foreach ($data['collection'] as $key => $value) {
                             echo '<li><a class="dropdown-item transition small" href="#">' . $value['category'] . '</a></li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-none d-md-block align-self-center">
+                <div class="dropdown">
+                    <a href="#" class="navbar-item p-2 text-decoration-none text-white fw-semibold" data-bs-toggle="dropdown" aria-expanded="false">
+                        STORY<i class="ms-1 bi bi-chevron-down small"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <?php
+                        foreach ($data['series'] as $key => $value) {
+                            echo '<li><a class="dropdown-item transition small" href="' . BASEURL . 'stories/' . $value['id'] . '">' . $value['category'] . '</a></li>';
                         }
                         ?>
                     </ul>
@@ -135,7 +135,7 @@
                 <ul class="dropdown-menu">
                     <?php
                     foreach ($data['series'] as $key => $value) {
-                        echo '<li><a class="dropdown-item transition small" href="' . BASEURL . 'stories/' . $value['id'] . '">' . $value['category'] . '</a></li>';
+                        echo '<li><a class="dropdown-item transition small" href="' . BASEURL . 'home/story/' . $value['id'] . '">' . $value['category'] . '</a></li>';
                     }
                     ?>
                 </ul>
@@ -191,7 +191,7 @@
 
         function scrollBar() {
             let windowScroll = $(window).scrollTop();
-            if (windowScroll > 600) {
+            if (windowScroll > 500) {
                 if ($('#navbar-container').css('display') == 'none') {
                     $('#navbar-container').fadeIn('fast');
                 }

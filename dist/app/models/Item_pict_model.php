@@ -10,6 +10,14 @@ class Item_pict_model extends Model
         return $this->db->results();
     }
 
+    public function resetThumb($id)
+    {
+        $this->db->query("UPDATE $this->table SET is_thumb=0 WHERE store_id=:id");
+        $this->db->bind('id', $id);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
+
     public function deleteByItem($id)
     {
         $this->db->query("DELETE FROM $this->table WHERE store_id=:id");

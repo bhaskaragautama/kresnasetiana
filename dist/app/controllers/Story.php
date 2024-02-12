@@ -69,6 +69,7 @@ class Story extends Controller
         } else {
             $save = $this->model("Story_model")->update($data, $id);
             $this->model('Story_pict_model')->resetBest($id);
+            $this->model('Story_pict_model')->resetThumb($id);
             foreach ($_POST['desc'] as $key => $value) {
                 $desc = $this->sanitizeString($value);
                 $position = ($_POST['position'][$key] == '' || $desc == '' ? NULL : $this->sanitizeInt($_POST['position'][$key]));
@@ -76,6 +77,9 @@ class Story extends Controller
             }
             foreach ($_POST['best'] as $key => $value) {
                 $this->model('Story_pict_model')->update(['is_best' => 1], $key);
+            }
+            foreach ($_POST['thumb'] as $key => $value) {
+                $this->model('Story_pict_model')->update(['is_thumb' => 1], $key);
             }
         }
         if (!empty($_FILES['photo']['name'][0])) {

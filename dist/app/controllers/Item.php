@@ -51,6 +51,20 @@ class Item extends Controller
         $this->view('admin/templates/footer');
     }
 
+    public function setThumbnail($id, $photo)
+    {
+        $id = $this->sanitizeInt($id);
+        $photo = $this->sanitizeInt($photo);
+        $this->model('Item_pict_model')->resetThumb($id);
+        $update = $this->model('Item_pict_model')->update(['is_thumb' => 1], $photo);
+        if ($update) {
+            Flasher::setFlash('Thumbnail set successfully', 'success');
+        } else {
+            Flasher::setFlash('Failed to set the thumbnail', 'danger');
+        }
+        header('Location: ' . BASEURL . 'item/photo/' . $id);
+    }
+
     public function save()
     {
         $id = $this->sanitizeInt($_POST['id']);
