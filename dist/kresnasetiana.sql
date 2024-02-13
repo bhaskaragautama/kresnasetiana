@@ -31,7 +31,7 @@ CREATE TABLE `portfolio` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `portfolio` (
 
 LOCK TABLES `portfolio` WRITE;
 /*!40000 ALTER TABLE `portfolio` DISABLE KEYS */;
-INSERT INTO `portfolio` VALUES (2,'Killing with a Smile','1707386209-portrait-man-laughing.jpg',0,1,'2024-02-08 17:56:49',NULL),(3,'Hey','1707386896-2150526696.jpg',0,1,'2024-02-08 18:08:16','2024-02-10 19:14:10'),(4,'Let\'s Go','1707386946-john-fowler-03Pv2Ikm5Hk-unsplash.jpg',1,1,'2024-02-08 18:09:07','2024-02-10 19:14:04');
+INSERT INTO `portfolio` VALUES (2,'Killing with a Smile','1707386209-portrait-man-laughing.jpg',0,1,'2024-02-08 17:56:49',NULL),(3,'Hey','1707386896-2150526696.jpg',0,1,'2024-02-08 18:08:16','2024-02-10 19:14:10'),(4,'Let\'s Go','1707386946-john-fowler-03Pv2Ikm5Hk-unsplash.jpg',1,1,'2024-02-08 18:09:07','2024-02-10 19:14:04'),(5,'Hanung','1707795928-1potfr.jpg',1,NULL,'2024-02-13 11:45:28',NULL);
 /*!40000 ALTER TABLE `portfolio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -58,7 +58,7 @@ CREATE TABLE `portfolio_pivot` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `portfolio_pivot` (
 
 LOCK TABLES `portfolio_pivot` WRITE;
 /*!40000 ALTER TABLE `portfolio_pivot` DISABLE KEYS */;
-INSERT INTO `portfolio_pivot` VALUES (7,2,13,'2024-02-08 17:56:50',NULL),(8,2,15,'2024-02-08 17:56:50',NULL),(9,2,10,'2024-02-08 17:56:50',NULL),(10,2,12,'2024-02-08 17:56:50',NULL),(15,4,13,'2024-02-10 19:14:04',NULL),(16,4,10,'2024-02-10 19:14:04',NULL),(17,3,13,'2024-02-10 19:14:10',NULL),(18,3,10,'2024-02-10 19:14:10',NULL);
+INSERT INTO `portfolio_pivot` VALUES (7,2,13,'2024-02-08 17:56:50',NULL),(8,2,15,'2024-02-08 17:56:50',NULL),(9,2,10,'2024-02-08 17:56:50',NULL),(10,2,12,'2024-02-08 17:56:50',NULL),(15,4,13,'2024-02-10 19:14:04',NULL),(16,4,10,'2024-02-10 19:14:04',NULL),(17,3,13,'2024-02-10 19:14:10',NULL),(18,3,10,'2024-02-10 19:14:10',NULL),(19,5,13,'2024-02-13 11:45:28',NULL),(20,5,15,'2024-02-13 11:45:28',NULL);
 /*!40000 ALTER TABLE `portfolio_pivot` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,4 +305,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-13  2:21:18
+-- Dump completed on 2024-02-13 15:48:27

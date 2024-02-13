@@ -92,26 +92,13 @@
     <!-- navbar end -->
 
     <!-- home nav start -->
-    <div id="navbar-home" class="py-4 px-4 px-md-5 mb-5 d-flex flex-column justify-content-between">
+    <div id="navbar-home" class="py-4 px-4 px-md-5 mb-5 d-flex flex-column justify-content-between <?= $page == 'home' ? 'vh-100' : '' ?>">
         <div class="d-flex justify-content-between">
-            <a class="p-2 text-decoration-none text-black fw-semibold fs-6 p-1 d-block d-md-none align-self-center" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav"><i class="bi bi-list"></i></a>
-            <a href="<?= BASEURL ?>" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center d-none d-md-block">Home</a>
-            <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center d-none d-md-block">Portfolio</a>
-            <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Kresna Setiana</a>
-            <div class="dropdown align-self-center d-none d-md-block">
-                <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1" data-bs-toggle="dropdown" aria-expanded="false">
-                    Store<i class="ms-1 bi bi-chevron-down small"></i>
-                </a>
-                <ul class="dropdown-menu">
-                    <?php
-                    foreach ($data['collection'] as $key => $value) {
-                        echo '<li><a class="dropdown-item transition small" href="#">' . $value['category'] . '</a></li>';
-                    }
-                    ?>
-                </ul>
-            </div>
-            <div class="dropdown align-self-center d-none d-md-block">
-                <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="p-2 text-decoration-none text-black fw-semibold fs-6 p-1 align-self-center order-0 <?= $page == 'home' ? 'd-none' : 'd-block d-md-none' ?>" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav"><i class="bi bi-list"></i></a>
+            <a href="<?= BASEURL ?>" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center order-0 <?= $page == 'home' ? 'd-block' : 'd-none d-md-block' ?>">Home</a>
+            <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center <?= $page == 'home' ? 'order-1' : 'order-2' ?>">Kresna Setiana</a>
+            <div class="dropdown align-self-center z-1 <?= $page == 'home' ? 'order-2 d-block' : 'd-none d-md-block' ?>">
+                <a href="#" class="text-decoration-none text-black transition fw-semibold p-1" data-bs-toggle="dropdown" aria-expanded="false">
                     Story<i class="ms-1 bi bi-chevron-down small"></i>
                 </a>
                 <ul class="dropdown-menu">
@@ -122,7 +109,21 @@
                     ?>
                 </ul>
             </div>
-            <a href="#" class="navbar-item p-2 text-decoration-none text-black fw-semibold fs-6 p-1 d-block d-md-none align-self-center"><i class="bi bi-search"></i></a>
+            <?= $page == 'home' ? '</div><div class="d-flex justify-content-between">' : '' ?>
+            <a href="<?= BASEURL ?>home/portfolio" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center <?= $page == 'home' ? 'order-3 d-block' : 'order-1 d-none d-md-block' ?>">Portfolio</a>
+            <div class="dropdown align-self-center z-1 <?= $page == 'home' ? 'order-4 d-block' : 'order-3 d-none d-md-block' ?>">
+                <a href="#" class="text-decoration-none text-black transition fw-semibold p-1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Store<i class="ms-1 bi bi-chevron-down small"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <?php
+                    foreach ($data['collection'] as $key => $value) {
+                        echo '<li><a class="dropdown-item transition small" href="#">' . $value['category'] . '</a></li>';
+                    }
+                    ?>
+                </ul>
+            </div>
+            <a href="#" class="navbar-item p-2 text-decoration-none text-black fw-semibold fs-6 p-1 align-self-center order-4 <?= $page == 'home' ? 'd-none' : 'd-block d-md-none' ?>"><i class="bi bi-search"></i></a>
         </div>
     </div>
     <!-- home nav end -->

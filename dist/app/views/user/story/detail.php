@@ -2,7 +2,10 @@
     <div class="row">
         <div class="col-12">
             <div class="text-center fs-5 text-muted mb-2"><?= $data['story']['category'] ?></div>
-            <h1 class="text-center fs-3"><?= $data['story']['title'] ?></h1>
+            <h1 class="text-center fs-3 mb-2"><?= $data['story']['title'] ?></h1>
+            <div class="text-center">
+                <a href="<?= BASEURL ?>home/story/<?= $data['story']['cat_id'] ?>"><i class="bi bi-arrow-left"></i> All <?= $data['story']['category'] ?></a>
+            </div>
         </div>
     </div>
 </div>
@@ -64,12 +67,12 @@
                         }
                     }
                     if ($key != (sizeof($data['images']) - 1)) {
-                        $content[$row] = '<div class="col-12 my-5 py-5">';
+                        $content[$row] = '<div class="col-12 mt-5 pt-5">';
                         $content[$row] .= '<div class="row justify-content-center">';
                         if ($value['desc_position'] == 1) {
-                            $content[$row] .= '<div class="col-12 text-justify align-self-center"><div class="py-3" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '">' . $value['desc'] . '</div></div>';
+                            $content[$row] .= '<div class="col-12 text-justify align-self-center"><div class="pt-3" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '">' . $value['desc'] . '</div></div>';
                         } else if ($value['desc_position'] == 4) {
-                            $content[$row] .= '<div class="col text-justify align-self-center"><div class="py-3" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '">' . $value['desc'] . '</div></div>';
+                            $content[$row] .= '<div class="col text-justify align-self-center"><div class="pt-3" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '">' . $value['desc'] . '</div></div>';
                         }
                         if ($value['orientation'] == 0) {
                             $content[$row] .= '<div class="align-self-center ' . ($value['desc_position'] == 2 || $value['desc_position'] == 4 ? 'col-md-4' : 'col-12') . '"><div class="position-relative" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '"><div class="photo-preview overflow-hidden shadow ratio ratio-portrait"><div class="position-absolute blur-load" style="background-image: url(' . THUMBURL . $value['picture'] . ');"></div><img data-src="' . IMGURL . $value['picture'] . '" class="object-fit-cover img-thumb w-100 h-100 transition" style="opacity: 0;" loading="lazy"></div></div></div>';
@@ -77,9 +80,9 @@
                             $content[$row] .= '<div class="align-self-center ' . ($value['desc_position'] == 2 || $value['desc_position'] == 4 ? 'col-md-6' : 'col-12') . '"><div class="position-relative" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '"><div class="photo-preview overflow-hidden shadow ratio ' . ($value['desc_position'] == 2 || $value['desc_position'] == 4 ? 'ratio-portrait' : 'ratio-16x9') . '">    <div class="position-absolute blur-load" style="background-image: url(' . THUMBURL . $value['picture'] . ');"></div><img data-src="' . IMGURL . $value['picture'] . '" class="object-fit-cover img-thumb w-100 h-100 transition" style="opacity: 0;" loading="lazy"></div></div></div>';
                         }
                         if ($value['desc_position'] == 2) {
-                            $content[$row] .= '<div class="col text-justify align-self-center"><div class="py-3" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '">' . $value['desc'] . '</div></div>';
+                            $content[$row] .= '<div class="col text-justify align-self-center"><div class="pt-3" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '">' . $value['desc'] . '</div></div>';
                         } else if ($value['desc_position'] == 3) {
-                            $content[$row] .= '<div class="col-12 text-justify align-self-center"><div class="py-3" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '">' . $value['desc'] . '</div></div>';
+                            $content[$row] .= '<div class="col-12 text-justify align-self-center"><div class="pt-3" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '">' . $value['desc'] . '</div></div>';
                         }
                         $content[$row] .= '</div>';
                         $content[$row] .= '</div>';
@@ -118,6 +121,16 @@
             }
             echo '</div>';
             ?>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="text-center">
+                <a href="<?= BASEURL ?>home/story/<?= $data['story']['cat_id'] ?>"><i class="bi bi-arrow-left"></i> All <?= $data['story']['category'] ?></a>
+            </div>
         </div>
     </div>
 </div>

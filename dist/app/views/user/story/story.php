@@ -10,7 +10,7 @@
     $i = 1;
     foreach ($data['stories'] as $key => $value) {
     ?>
-        <div class="row justify-content-center py-5 my-md-5">
+        <div class="row justify-content-center py-4 my-md-4">
             <div class="col-3 align-self-center <?= $i % 2 == 1 ? 'order-1' : 'order-3' ?>">
                 <div class="position-relative show-detail" data-id="<?= $value['id'] ?>" data-aos="fade-up" data-aos-offset="<?= rand(0, 200) ?>">
                     <div class="photo-preview ratio ratio-1x1 overflow-hidden pointer shadow">
@@ -33,7 +33,7 @@
                 </div>
             </div>
         </div>
-        <?= $i < sizeof($data['stories']) ? '<div class="row justify-content-center"><div class="col-2 border-end"><div class="ratio ratio-1x1"></div></div></div>' : '' ?>
+        <?= $i < sizeof($data['stories']) ? '<div class="row justify-content-center"><div class="col-1"><div class="ratio ratio-1x1"></div></div></div>' : '' ?>
     <?php
         $i++;
     }
