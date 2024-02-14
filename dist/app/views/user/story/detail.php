@@ -67,7 +67,7 @@
                         }
                     }
                     if ($key != (sizeof($data['images']) - 1)) {
-                        $content[$row] = '<div class="col-12 mt-5 pt-5">';
+                        $content[$row] = '<div class="col-12 my-5 py-5">';
                         $content[$row] .= '<div class="row justify-content-center">';
                         if ($value['desc_position'] == 1) {
                             $content[$row] .= '<div class="col-12 text-justify align-self-center"><div class="pt-3" data-aos="fade-up" data-aos-offset="' . rand(0, 200) . '">' . $value['desc'] . '</div></div>';

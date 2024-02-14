@@ -24,6 +24,7 @@ $focus-ring-color: rgba(#212529, 0.25);
 $aspect-ratios: (
     "1x1": 100%,
     "4x3": calc(3 / 4 * 100%),
+    "4x6": calc((6 / 4 * 100%) + 0.5rem),
     "landscape": calc(3 / 4 * 100%),
     "portrait": calc((6 / 4 * 100%) + 0.75rem),
     // "portrait": calc(6 / 4 * 100%),
@@ -89,7 +90,7 @@ $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w
 }
 
 .transition {
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
 .handwriting {
@@ -102,6 +103,21 @@ $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w
 
 .pointer {
     cursor: pointer;
+}
+
+#navbar-home a:hover {
+    @extend .text-body-tertiary;
+}
+
+.img-preview-nav:hover,
+#btn-close-preview:hover {
+    i {
+        @extend .text-white;
+    }
+}
+
+.btn-tag:hover {
+    @extend .bg-secondary, .text-white;
 }
 
 // admin
@@ -169,7 +185,7 @@ a:visited {
 }
 
 .photo-preview:hover>img {
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition-duration: 0.5s;
 }
 
@@ -227,6 +243,10 @@ textarea {
     margin-left: 3px;
     color: black !important;
     background: transparent;
+}
+
+.custom-dropdown-list {
+    display: none;
 }
 
 // Custom scrollbar

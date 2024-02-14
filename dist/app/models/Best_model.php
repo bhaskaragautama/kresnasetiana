@@ -10,7 +10,7 @@ class Best_model
 
     public function readAll()
     {
-        $this->db->query("SELECT `id`, `picture`, 'portfolio' AS `tablename` FROM `portfolio` WHERE `is_best`=1 UNION SELECT `id`, `picture`, 'store_pict' AS `tablename` FROM `store_pict` WHERE `is_best`=1 UNION SELECT `id`, `picture`, 'stories_pict' AS `tablename` FROM `stories_pict` WHERE `is_best`=1");
+        $this->db->query("SELECT `id`, `picture`, `orientation`, 'portfolio' AS `tablename` FROM `portfolio` WHERE `is_best`=1 UNION SELECT `id`, `picture`, `orientation`, 'store_pict' AS `tablename` FROM `store_pict` WHERE `is_best`=1 UNION SELECT `id`, `picture`, `orientation`, 'stories_pict' AS `tablename` FROM `stories_pict` WHERE `is_best`=1");
         return $this->db->results();
     }
 

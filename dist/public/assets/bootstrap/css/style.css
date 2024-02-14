@@ -7160,6 +7160,10 @@ textarea.form-control-lg {
   --bs-aspect-ratio: 75%;
 }
 
+.ratio-4x6 {
+  --bs-aspect-ratio: calc(150% + 0.5rem);
+}
+
 .ratio-landscape {
   --bs-aspect-ratio: 75%;
 }
@@ -8827,7 +8831,8 @@ a:visited {
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-white, .admin-nav > a, .footer {
+.text-white, .admin-nav > a, .footer, .btn-tag:hover, .img-preview-nav:hover i,
+#btn-close-preview:hover i {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 }
@@ -8857,7 +8862,7 @@ a:visited {
   color: var(--bs-secondary-color) !important;
 }
 
-.text-body-tertiary {
+.text-body-tertiary, #navbar-home a:hover {
   --bs-text-opacity: 1;
   color: var(--bs-tertiary-color) !important;
 }
@@ -9082,7 +9087,7 @@ a:visited {
   background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-secondary {
+.bg-secondary, .btn-tag:hover {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
 }
@@ -14398,7 +14403,8 @@ a:visited {
   color: rgba(var(--bs-black-rgb), var(--bs-text-opacity)) !important;
 }
 
-.text-white, .admin-nav > a, .footer {
+.text-white, .admin-nav > a, .footer, .btn-tag:hover, .img-preview-nav:hover i,
+#btn-close-preview:hover i {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-white-rgb), var(--bs-text-opacity)) !important;
 }
@@ -14428,7 +14434,7 @@ a:visited {
   color: var(--bs-secondary-color) !important;
 }
 
-.text-body-tertiary {
+.text-body-tertiary, #navbar-home a:hover {
   --bs-text-opacity: 1;
   color: var(--bs-tertiary-color) !important;
 }
@@ -14653,7 +14659,7 @@ a:visited {
   background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-secondary {
+.bg-secondary, .btn-tag:hover {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
 }
@@ -18487,7 +18493,7 @@ a:visited {
 }
 
 .transition {
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .handwriting {
@@ -18519,7 +18525,7 @@ a:visited {
 }
 
 .photo-preview:hover > img {
-  transform: scale(1.05);
+  transform: scale(1.03);
   transition-duration: 0.5s;
 }
 
@@ -18569,6 +18575,10 @@ a:visited {
   margin-left: 3px;
   color: black !important;
   background: transparent;
+}
+
+.custom-dropdown-list {
+  display: none;
 }
 
 /* width */

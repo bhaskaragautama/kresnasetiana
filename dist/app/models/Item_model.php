@@ -18,6 +18,13 @@ class Item_model extends Model
         return $this->db->result();
     }
 
+    public function readByCategory($catId)
+    {
+        $this->db->query("SELECT `$this->table`.*, `store_cat`.`category` FROM `$this->table` JOIN `store_cat` ON `$this->table`.`cat_id`=`store_cat`.`id` WHERE `$this->table`.`cat_id`=:cat_id");
+        $this->db->bind('cat_id', $catId);
+        return $this->db->results();
+    }
+
     public function checkCollection($collectionId)
     {
         $this->db->query("SELECT * FROM $this->table WHERE cat_id=:cat_id");
