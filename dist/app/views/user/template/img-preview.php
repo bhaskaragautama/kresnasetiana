@@ -26,7 +26,7 @@
 </div>
 
 <script>
-    function showImagePreview(img, idx, total) {
+    function showImagePreview(img, idx, total, first = 1) {
         let containerHeight = 0;
         let containerWidth = 0;
         let navPrev;
@@ -44,7 +44,7 @@
             });
             $('#img-preview-modal').css('opacity', 1);
             navPrev = (idx - 1 < 1 ? total : idx - 1);
-            navNext = (idx + 1 > total ? 1 : idx + 1);
+            navNext = (idx + 1 > total ? first : idx + 1);
             $('#img-preview-prev').data('imgidx', navPrev);
             $('#img-preview-next').data('imgidx', navNext);
             $('.img-preview-nav').data('total', total);

@@ -15,7 +15,7 @@
    <div class="flasher">
       <?php Flasher::flash(); ?>
    </div>
-   <div class="container-fluid vh-100">
+   <div class="container-fluid svh-100">
       <div class="row h-100 justify-content-center align-items-center">
          <div class="col-8 col-md-6 col-lg-4">
             <div class="row g-2 justify-content-center align-items-center">

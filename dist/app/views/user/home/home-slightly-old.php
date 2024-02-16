@@ -93,7 +93,7 @@
     <!-- navbar end -->
 
     <!-- carousel start -->
-    <div id="carousel-container" class="vh-100 w-100 position-absolute top-0 start-0">
+    <div id="carousel-container" class="svh-100 w-100 position-absolute top-0 start-0">
         <div class="container-fluid h-100">
             <div class="row h-100 justify-content-center align-items-center">
                 <div class="col-10 col-sm-8 col-md-7 col-lg-5">
@@ -124,7 +124,7 @@
     </div>
 
     <!-- home nav start -->
-    <div id="navbar-home" class="py-4 px-4 px-md-5 mb-5 vh-100 d-flex flex-column justify-content-between">
+    <div id="navbar-home" class="py-4 px-4 px-md-5 mb-5 svh-100 d-flex flex-column justify-content-between">
         <div class="d-flex justify-content-between">
             <a href="<?= BASEURL ?>" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Home</a>
             <a href="#" class="text-decoration-none z-1 text-black transition fw-semibold p-1 align-self-center">Kresna Setiana</a>

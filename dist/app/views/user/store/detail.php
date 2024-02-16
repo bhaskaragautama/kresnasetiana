@@ -10,14 +10,14 @@
         </div>
     </div>
 </div>
-<div class="container">
+<div class="container flex-grow-1 overflow-x-hidden">
     <div class="row g-5 justify-content-center">
         <?php
         $i = 1;
         foreach ($data['images'] as $key => $value) {
         ?>
-            <div class="col-6 col-md-4 col-lg-3">
-                <div class="position-relative show-img-preview img-preview-<?= $i ?>" data-img="<?= $value['picture'] ?>" data-total="<?= sizeof($data['images']) ?>" data-current="<?= $i ?>" data-aos="fade-up" data-aos-offset="<?= rand(0, 200) ?>">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="position-relative show-img-preview img-preview-<?= $i ?>" data-img="<?= $value['picture'] ?>" data-total="<?= sizeof($data['images']) ?>" data-current="<?= $i ?>" data-aos="fade-up" data-aos-duration="800" data-aos-offset="<?= rand(0, 200) ?>">
                     <div class="photo-preview ratio ratio-1x1 overflow-hidden pointer shadow">
                         <div class="position-absolute blur-load" style="background-image: url('<?= THUMBURL . $value['picture'] ?>');"></div>
                         <img data-src="<?= IMGURL . $value['picture'] ?>" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
@@ -37,9 +37,13 @@
         }
         ?>
     </div>
-</div>
-<div class="text-center mt-5">
-    <a href="<?= BASEURL ?>home/store/<?= $data['item']['cat_id'] ?>"><i class="bi bi-arrow-left"></i> All <?= $data['item']['category'] ?></a>
+    <div class="row my-5">
+        <div class="col-12">
+            <div class="text-center">
+                <a href="<?= BASEURL ?>home/store/<?= $data['item']['cat_id'] ?>"><i class="bi bi-arrow-left"></i> All <?= $data['item']['category'] ?></a>
+            </div>
+        </div>
+    </div>
 </div>
 <script>
     $(document).ready(function() {

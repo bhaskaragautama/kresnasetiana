@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="container-fluid vh-100">
+    <div class="container-fluid svh-100">
         <div class="row h-100 align-items-center justify-content-center">
             <div class="col-lg-6 col-md-8 text-center">
                 <div class="text-danger fw-semibold mb-1">ERROR</div>

@@ -28,7 +28,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="d-md-block d-none col-2 vh-100 position-fixed bg-dark text-white p-0">
+            <div class="d-md-block d-none col-2 svh-100 position-fixed bg-dark text-white p-0">
                 <div class="row justify-content-center pt-3 pb-5">
                     <div class="col-lg-6 col-md-10">
                         <img src="<?= BASEURL ?>img/delusi.png" class="w-100">
@@ -36,23 +36,23 @@
                 </div>
                 <ul class="list-unstyled flex flex-column fw-semibold">
                     <li class="admin-nav mb-2 text-lg-start text-center <?= $page == 'dashboard' ? 'active' : '' ?>">
-                        <a href="<?= BASEURL.'dashboard'; ?>" class="d-block py-3 px-4"><i class="fa fa-fw fa-dashboard me-2"></i> <span class="d-lg-inline-block d-none">Dashboard</span></a>
+                        <a href="<?= BASEURL . 'dashboard'; ?>" class="d-block py-3 px-4"><i class="fa fa-fw fa-dashboard me-2"></i> <span class="d-lg-inline-block d-none">Dashboard</span></a>
                     </li>
                     <li class="admin-nav mb-2 text-lg-start text-center <?= $page == 'sold' ? 'active' : '' ?>">
-                        <a href="<?= BASEURL.'sold'; ?>" class="d-block py-3 px-4"><i class="fa fa-fw fa-ticket me-2"></i> <span class="d-lg-inline-block d-none">Penjualan</span></a>
+                        <a href="<?= BASEURL . 'sold'; ?>" class="d-block py-3 px-4"><i class="fa fa-fw fa-ticket me-2"></i> <span class="d-lg-inline-block d-none">Penjualan</span></a>
                     </li>
                     <li class="admin-nav mb-2 text-lg-start text-center <?= $page == 'setting' ? 'active' : '' ?>">
-                        <a href="<?= BASEURL.'setting'; ?>" class="d-block py-3 px-4"><i class="fa fa-fw fa-cog me-2"></i> <span class="d-lg-inline-block d-none">Pengaturan</span></a>
+                        <a href="<?= BASEURL . 'setting'; ?>" class="d-block py-3 px-4"><i class="fa fa-fw fa-cog me-2"></i> <span class="d-lg-inline-block d-none">Pengaturan</span></a>
                     </li>
                     <li class="admin-nav mb-2 text-lg-start text-center <?= $page == 'user' ? 'active' : '' ?>">
-                        <a href="<?= BASEURL.'user'; ?>" class="d-block py-3 px-4"><i class="fa fa-fw fa-users me-2"></i> <span class="d-lg-inline-block d-none">Pengguna</span></a>
+                        <a href="<?= BASEURL . 'user'; ?>" class="d-block py-3 px-4"><i class="fa fa-fw fa-users me-2"></i> <span class="d-lg-inline-block d-none">Pengguna</span></a>
                     </li>
                     <li class="admin-nav mb-2 text-lg-start text-center <?= $page == 'log' ? 'active' : '' ?>">
-                        <a href="<?= BASEURL.'log'; ?>" class="d-block py-3 px-4"><i class="fa fa-fw fa-book me-2"></i> <span class="d-lg-inline-block d-none">Log Sistem</span></a>
+                        <a href="<?= BASEURL . 'log'; ?>" class="d-block py-3 px-4"><i class="fa fa-fw fa-book me-2"></i> <span class="d-lg-inline-block d-none">Log Sistem</span></a>
                     </li>
                 </ul>
             </div>
-            <div class="col-md-10 offset-md-2 p-0 min-vh-100">
+            <div class="col-md-10 offset-md-2 p-0 min-svh-100">
                 <nav class="navbar navbar-expand-md bg-body-tertiary">
                     <div class="container-fluid">
                         <button class="btn btn-dark d-md-none d-block" data-bs-toggle="offcanvas" data-bs-target="#navOffcanvas" aria-controls="navOffcanvas">Menu</button>
@@ -67,7 +67,7 @@
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-end position-absolute">
                                         <li><a class="dropdown-item" href="<?= BASEURL ?>profile">Ubah Password</a></li>
-                                        <li><a class="dropdown-item" href="<?= BASEURL.'login/logout'; ?>">Logout</a></li>
+                                        <li><a class="dropdown-item" href="<?= BASEURL . 'login/logout'; ?>">Logout</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -143,19 +143,19 @@
                     </div>
                     <ul class="list-unstyled flex flex-column fw-semibold">
                         <li class="py-3 px-4 admin-nav mb-2 text-lg-start text-center active">
-                            <a href="<?= BASEURL.'dashboard'; ?>"><i class="fa fa-fw fa-dashboard me-2"></i> <span>Dashboard</span></a>
+                            <a href="<?= BASEURL . 'dashboard'; ?>"><i class="fa fa-fw fa-dashboard me-2"></i> <span>Dashboard</span></a>
                         </li>
                         <li class="py-3 px-4 admin-nav mb-2 text-lg-start text-center">
-                            <a href="<?= BASEURL.'sold'; ?>"><i class="fa fa-fw fa-ticket me-2"></i> <span>Penjualan</span></a>
+                            <a href="<?= BASEURL . 'sold'; ?>"><i class="fa fa-fw fa-ticket me-2"></i> <span>Penjualan</span></a>
                         </li>
                         <li class="py-3 px-4 admin-nav mb-2 text-lg-start text-center">
-                            <a href="<?= BASEURL.'setting'; ?>"><i class="fa fa-fw fa-cog me-2"></i> <span>Pengaturan</span></a>
+                            <a href="<?= BASEURL . 'setting'; ?>"><i class="fa fa-fw fa-cog me-2"></i> <span>Pengaturan</span></a>
                         </li>
                         <li class="py-3 px-4 admin-nav mb-2 text-lg-start text-center">
-                            <a href="<?= BASEURL.'user'; ?>"><i class="fa fa-fw fa-users me-2"></i> <span>Pengguna</span></a>
+                            <a href="<?= BASEURL . 'user'; ?>"><i class="fa fa-fw fa-users me-2"></i> <span>Pengguna</span></a>
                         </li>
                         <li class="py-3 px-4 admin-nav mb-2 text-lg-start text-center">
-                            <a href="<?= BASEURL.'log'; ?>"><i class="fa fa-fw fa-book me-2"></i> <span>Log Sistem</span></a>
+                            <a href="<?= BASEURL . 'log'; ?>"><i class="fa fa-fw fa-book me-2"></i> <span>Log Sistem</span></a>
                         </li>
                     </ul>
                 </div>

@@ -28,7 +28,7 @@
         foreach ($data['images'] as $key => $value) {
         ?>
             <div class="col-6 col-md-4 col-lg-3">
-                <div class="position-relative show-img-preview img-preview-<?= $i ?>" data-img="<?= $value['picture'] ?>" data-total="<?= sizeof($data['images']) ?>" data-current="<?= $i ?>" data-aos="fade-up" data-aos-offset="<?= rand(0, 200) ?>">
+                <div class="position-relative show-img-preview img-preview-<?= $i ?>" data-img="<?= $value['picture'] ?>" data-total="<?= sizeof($data['images']) ?>" data-current="<?= $i ?>" data-aos="fade-up" data-aos-duration="800" data-aos-offset="<?= rand(0, 200) ?>">
                     <div class="photo-preview ratio ratio-1x1 overflow-hidden pointer shadow">
                         <div class="position-absolute blur-load" style="background-image: url('<?= THUMBURL . $value['picture'] ?>');"></div>
                         <img data-src="<?= IMGURL . $value['picture'] ?>" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
@@ -75,7 +75,7 @@
                         let i = 1;
                         $.each(response, function(idx, val) {
                             content += `<div class="col-6 col-md-4 col-lg-3">
-                                <div class="position-relative show-img-preview img-preview-${i}" data-img="${val.picture}" data-total="${response.length}" data-current="${i}" data-aos="fade-up" data-aos-offset="${Math.floor(Math.random() * (200 - 0 + 1)) + 0}">
+                                <div class="position-relative show-img-preview img-preview-${i}" data-img="${val.picture}" data-total="${response.length}" data-current="${i}" data-aos="fade-up" data-aos-duration="800" data-aos-offset="${Math.floor(Math.random() * (200 - 0 + 1)) + 0}">
                                     <div class="photo-preview ratio ratio-1x1 overflow-hidden pointer shadow">
                                         <div class="position-absolute blur-load" style="background-image: url('<?= THUMBURL ?>${val.picture}');"></div>
                                         <img data-src="<?= IMGURL ?>${val.picture}" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />

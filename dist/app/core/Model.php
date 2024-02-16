@@ -21,6 +21,12 @@ class Model
       return $this->db->result();
    }
 
+   public function readTotal()
+   {
+      $this->db->query("SELECT COUNT(id) FROM `$this->table`");
+      return $this->db->singleResult();
+   }
+
    public function create($data)
    {
       $data['created_at'] = date('Y-m-d H:i:s');
@@ -39,7 +45,7 @@ class Model
       $data['updated_at'] = date('Y-m-d H:i:s');
       $fields = [];
       foreach ($data as $key => $value) {
-         array_push($fields, '`'.$key.'`' . '=:' . $key);
+         array_push($fields, '`' . $key . '`' . '=:' . $key);
       }
       $fields = implode(', ', $fields);
       $this->db->query("UPDATE `$this->table` SET $fields WHERE `id`=:id");

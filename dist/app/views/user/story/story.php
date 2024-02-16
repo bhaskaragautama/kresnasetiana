@@ -12,7 +12,7 @@
     ?>
         <div class="row justify-content-center py-4 my-md-4">
             <div class="col-3 align-self-center d-none d-md-block <?= $i % 2 == 1 ? 'order-1' : 'order-3' ?>">
-                <div class="position-relative show-detail" data-id="<?= $value['id'] ?>" data-aos="fade-up" data-aos-offset="<?= rand(0, 200) ?>">
+                <div class="position-relative show-detail" data-id="<?= $value['id'] ?>" data-aos="fade-up" data-aos-duration="800" data-aos-offset="<?= rand(0, 200) ?>">
                     <div class="photo-preview ratio ratio-1x1 overflow-hidden pointer shadow">
                         <div class="position-absolute blur-load" style="background-image: url('<?= THUMBURL . (isset($value['thumbnail'][0]['picture']) ? $value['thumbnail'][0]['picture'] : 'no-thumb.jpg') ?>');"></div>
                         <img data-src="<?= IMGURL . (isset($value['thumbnail'][0]['picture']) ? $value['thumbnail'][0]['picture'] : 'no-thumb.jpg') ?>" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />
@@ -21,7 +21,7 @@
             </div>
             <div class="col-1 d-none d-md-block order-2"></div>
             <div class="col-10 col-md-5 <?= $i % 2 == 1 ? 'order-3' : 'order-1' ?>">
-                <div class="position-relative show-detail" data-id="<?= $value['id'] ?>" data-aos="fade-up" data-aos-offset="<?= rand(0, 200) ?>">
+                <div class="position-relative show-detail" data-id="<?= $value['id'] ?>" data-aos="fade-up" data-aos-duration="800" data-aos-offset="<?= rand(0, 200) ?>">
                     <div class="photo-preview ratio ratio-1x1 overflow-hidden pointer shadow">
                         <div class="position-absolute blur-load" style="background-image: url('<?= THUMBURL . (isset($value['thumbnail'][1]['picture']) ? $value['thumbnail'][1]['picture'] : 'no-thumb.jpg') ?>');"></div>
                         <img data-src="<?= IMGURL . (isset($value['thumbnail'][1]['picture']) ? $value['thumbnail'][1]['picture'] : 'no-thumb.jpg') ?>" class="img-thumb w-100 h-100 object-fit-cover transition" style="opacity: 0;" loading="lazy" />

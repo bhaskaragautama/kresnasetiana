@@ -24,7 +24,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="d-md-block d-none col-2 vh-100 position-fixed bg-dark text-white p-0 overflow-y-auto">
+            <div class="d-md-block d-none col-2 svh-100 position-fixed bg-dark text-white p-0 overflow-y-auto">
                 <div class="container-fluid">
                     <div class="row justify-content-center pt-3 pb-5">
                         <div class="col-lg-6 col-md-10 fs-5 fw-bold">
@@ -71,7 +71,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="<?= !isset($_SESSION['flow-menu']) ? 'col-md-10 offset-md-2' : ($_SESSION['flow-menu'] == 1 ? 'col-md-10 offset-md-2' : 'col-md-12') ?> p-0 min-vh-100 bg-white position-relative" id="main-content">
+            <div class="<?= !isset($_SESSION['flow-menu']) ? 'col-md-10 offset-md-2' : ($_SESSION['flow-menu'] == 1 ? 'col-md-10 offset-md-2' : 'col-md-12') ?> p-0 min-svh-100 bg-white position-relative" id="main-content">
                 <nav class="navbar navbar-expand-md bg-body-tertiary">
                     <div class="container-fluid">
                         <button class="btn btn-dark d-md-none d-block rounded-3" data-bs-toggle="offcanvas" data-bs-target="#navOffcanvas" aria-controls="navOffcanvas">Menu</button>

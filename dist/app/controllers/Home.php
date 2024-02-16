@@ -11,7 +11,7 @@ class Home extends Controller
       $this->view('user/template/header', 'home', $nav);
       $this->view('user/home/home', '', $data);
       $this->view('user/template/img-preview');
-      $this->view('user/template/footer');
+      $this->view('user/template/footer', 'home', $nav);
    }
 
    public function about()
@@ -20,7 +20,7 @@ class Home extends Controller
       $nav['collection'] = $this->model('Collection_model')->readAll();
       $this->view('user/template/header', 'about', $nav);
       $this->view('user/about/about');
-      $this->view('user/template/footer');
+      $this->view('user/template/footer', 'about', $nav);
    }
 
    public function story($id)
@@ -35,7 +35,7 @@ class Home extends Controller
       $nav['collection'] = $this->model('Collection_model')->readAll();
       $this->view('user/template/header', 'story', $nav);
       $this->view('user/story/story', '', $data);
-      $this->view('user/template/footer');
+      $this->view('user/template/footer', 'story', $nav);
    }
 
    public function storyDetail($id)
@@ -47,7 +47,7 @@ class Home extends Controller
       $nav['collection'] = $this->model('Collection_model')->readAll();
       $this->view('user/template/header', 'story', $nav);
       $this->view('user/story/detail', '', $data);
-      $this->view('user/template/footer');
+      $this->view('user/template/footer', 'story', $nav);
    }
 
    public function portfolio()
@@ -56,11 +56,11 @@ class Home extends Controller
       $data['images'] = $this->model('Photo_model')->readAll();
       $nav['series'] = $this->model('Series_model')->readAll();
       $nav['collection'] = $this->model('Collection_model')->readAll();
-      $this->view('user/template/header', 'story', $nav);
+      $this->view('user/template/header', 'portfolio', $nav);
       $this->view('user/portfolio/portfolio', '', $data);
       $this->view('user/template/loading');
       $this->view('user/template/img-preview');
-      $this->view('user/template/footer');
+      $this->view('user/template/footer', 'portfolio', $nav);
    }
 
    public function portfolioTag()
@@ -84,7 +84,7 @@ class Home extends Controller
       $nav['collection'] = $this->model('Collection_model')->readAll();
       $this->view('user/template/header', 'store', $nav);
       $this->view('user/store/store', '', $data);
-      $this->view('user/template/footer');
+      $this->view('user/template/footer', 'store', $nav);
    }
 
    public function storeDetail($id)
@@ -97,6 +97,6 @@ class Home extends Controller
       $this->view('user/template/header', 'store', $nav);
       $this->view('user/store/detail', '', $data);
       $this->view('user/template/img-preview');
-      $this->view('user/template/footer');
+      $this->view('user/template/footer', 'store', $nav);
    }
 }

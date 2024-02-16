@@ -71,6 +71,16 @@ $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w
 @import "../../../../../node_modules/bootstrap/scss/utilities/api";
 
 // 8. Add additional custom code here
+.svh-100 {
+    height: 100vh;
+    height: 100svh;
+}
+
+.min-svh-100 {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
 .font-lustria * {
     font-family: 'Lustria', serif;
 }
@@ -105,8 +115,12 @@ $carousel-control-next-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w
     cursor: pointer;
 }
 
-#navbar-home a:hover {
+.navbar-dark-colored a:hover {
     @extend .text-body-tertiary;
+}
+
+.navbar-light-colored a:hover {
+    color: #cecece !important;
 }
 
 .img-preview-nav:hover,
@@ -240,13 +254,9 @@ textarea {
 }
 
 .dropdown-item:hover {
-    margin-left: 3px;
+    @extend .fw-semibold;
     color: black !important;
     background: transparent;
-}
-
-.custom-dropdown-list {
-    display: none;
 }
 
 // Custom scrollbar

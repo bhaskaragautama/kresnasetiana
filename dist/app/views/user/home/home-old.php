@@ -91,7 +91,7 @@
     <!-- navbar end -->
 
     <!-- carousel start -->
-    <div id="mainCarousel" class="carousel slide carousel-fade vh-100 w-100 position-absolute top-0 z-0" data-bs-ride="carousel">
+    <div id="mainCarousel" class="carousel slide carousel-fade svh-100 w-100 position-absolute top-0 z-0" data-bs-ride="carousel">
         <div class="carousel-inner h-100">
             <div class="position-relative carousel-item h-100 overflow-hidden active">
                 <div class="position-absolute h-100-w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-1.jpg);"></div>
@@ -112,7 +112,7 @@
         </button>
     </div>
     <!-- carousel end -->
-    <div class="vh-100 w-100"></div>
+    <div class="svh-100 w-100"></div>
 
     <div class="px-3">
         <div class="container-fluid">
