@@ -4,22 +4,22 @@
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-md-6 col-lg-5 d-none d-md-block">
                 <div class="ratio ratio-16x9">
-                    <div id="mainCarousel" class="carousel slide carousel-fade shadow" data-bs-ride="carousel">
+                    <div id="mainCarouselLandscape" class="carousel slide carousel-fade shadow" data-bs-ride="carousel">
                         <div class="carousel-inner h-100">
                             <div class="position-relative carousel-item h-100 overflow-hidden active">
-                                <div class="position-absolute h-100 w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-1.jpg);"></div>
+                                <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-1.jpg);"></div>
                                 <img data-src="img/header-bg-1.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 1" />
                             </div>
                             <div class="position-relative carousel-item h-100 overflow-hidden">
-                                <div class="position-absolute h-100 w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-2.jpg);"></div>
+                                <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-2.jpg);"></div>
                                 <img data-src="img/header-bg-2.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 2" />
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarouselLandscape" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#mainCarouselLandscape" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -28,22 +28,22 @@
             </div>
             <div class="col-6 col-sm-5 d-block d-md-none">
                 <div class="ratio ratio-portrait">
-                    <div id="mainCarousel" class="carousel slide carousel-fade shadow" data-bs-ride="carousel">
+                    <div id="mainCarouselPortrait" class="carousel slide carousel-fade shadow" data-bs-ride="carousel">
                         <div class="carousel-inner h-100">
                             <div class="position-relative carousel-item h-100 overflow-hidden active">
-                                <div class="position-absolute h-100 w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-p1.jpg);"></div>
+                                <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-p1.jpg);"></div>
                                 <img data-src="img/header-bg-p1.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 1" />
                             </div>
                             <div class="position-relative carousel-item h-100 overflow-hidden">
-                                <div class="position-absolute h-100 w-100 blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-p2.jpg);"></div>
+                                <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-p2.jpg);"></div>
                                 <img data-src="img/header-bg-p2.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 2" />
                             </div>
                         </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarouselPortrait" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#mainCarouselPortrait" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>

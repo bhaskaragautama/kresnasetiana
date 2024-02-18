@@ -18489,6 +18489,16 @@ a:visited {
   min-height: 100svh;
 }
 
+.dvh-100 {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.min-dvh-100 {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
 .font-lustria * {
   font-family: "Lustria", serif;
 }
