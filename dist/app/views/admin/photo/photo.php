@@ -23,7 +23,7 @@
                     echo '<td class="text-nowrap">' . ($value['is_best'] == 1 ? '<i class="bi bi-check-lg text-success"></i>' : '<i class="bi bi-x-lg text-danger"></i>') . '</td>';
                     echo '<td class="text-nowrap">
                         <a href="' . BASEURL . 'photo/form/' . $value['id'] . '" class="btn btn-warning btn-sm" title="Edit"><i class="bi bi-pencil-square"></i> Edit</a>
-                        <button type="button" class="btn btn-danger btn-sm delete-btn" data-delete="' . BASEURL . 'photo/delete/' . $value['id'] . '" title="Delete"><i class="bi bi-trash"></i> Delete</a>
+                        <button type="button" class="btn btn-danger btn-sm delete-btn" data-delete="' . BASEURL . 'photo/delete/' . $value['id'] . '" title="Delete"><i class="bi bi-trash"></i> Delete</button>
                     </td>';
                     echo '</tr>';
                     $i++;

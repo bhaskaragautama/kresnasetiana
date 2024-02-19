@@ -1,7 +1,7 @@
 <h2 class="fw-semibold mb-4">Dashboard</h2>
 
-<div class="row g-5">
-    <div class="col-auto">
+<div class="row g-md-5">
+    <div class="col-md-auto">
         <div class="alert alert-primary">
             <div class="d-flex gap-3">
                 <i class="bi bi-journal fs-3 align-self-center"></i>
@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-    <div class="col-auto">
+    <div class="col-md-auto">
         <div class="alert alert-warning">
             <div class="d-flex gap-3">
                 <i class="bi bi-images fs-3 align-self-center"></i>
@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="col-auto">
+    <div class="col-md-auto">
         <div class="alert alert-success">
             <div class="d-flex gap-3">
                 <i class="bi bi-bag-check fs-3 align-self-center"></i>

@@ -83,12 +83,6 @@
                     </div>
                     <div class="hstack">
                         <a href="#" class="link-light mb-2">
-                            <i class="bi bi-facebook"></i>
-                            Facebook
-                        </a>
-                    </div>
-                    <div class="hstack">
-                        <a href="#" class="link-light mb-2">
                             <i class="bi bi-instagram"></i>
                             Instagram
                         </a>
@@ -116,30 +110,30 @@
     <!-- nav start -->
     <nav id="navbar-home" class="<?= $page == 'about' ? 'navbar-light-colored' : 'navbar-dark-colored' ?> py-4 px-4 px-md-5 mb-5 d-flex flex-column justify-content-between <?= $page == 'home' ? 'svh-100' : '' ?>">
         <div class="d-flex justify-content-between">
-            <a class="p-2 text-decoration-none <?= $page == 'about' ? 'text-white' : 'text-dark' ?> fw-semibold z-1 fs-5 p-1 align-self-center order-0 <?= $page == 'home' ? 'd-none' : 'd-block d-md-none' ?>" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav"><i class="bi bi-list"></i></a>
-            <a href="<?= BASEURL ?>" class="text-decoration-none z-1 <?= $page == 'about' ? 'text-white' : 'text-dark' ?> transition fw-semibold p-1 align-self-center order-0 <?= $page == 'home' ? 'd-block' : 'd-none d-md-block' ?>"><span class="d-block d-md-none">Home</span><span class="d-none d-md-block fs-5">Home</span></a>
-            <a href="<?= BASEURL ?>home/about" class="text-decoration-none z-1 <?= $page == 'about' ? 'text-white' : 'text-dark' ?> transition fw-semibold p-1 align-self-center <?= $page == 'home' ? 'order-1' : 'order-2' ?>"><span class="d-block d-md-none">Kresna Setiana</span><span class="d-none d-md-block fs-5">Kresna Setiana</span></a>
+            <a class="p-2 text-decoration-none <?= $page == 'about' ? 'text-white' : 'text-dark' ?> fw-semibold z-1 p-1 align-self-center order-0 <?= $page == 'home' ? 'd-none' : 'd-block d-md-none' ?>" data-bs-toggle="offcanvas" href="#offcanvasNav" role="button" aria-controls="offcanvasNav"><i class="bi bi-list"></i></a>
+            <a href="<?= BASEURL ?>" class="text-decoration-none z-1 <?= $page == 'about' ? 'text-white' : 'text-dark' ?> transition fw-semibold p-1 align-self-center order-0 <?= $page == 'home' ? 'd-block' : 'd-none d-md-block' ?>"><span class="d-block d-md-none">Home</span><span class="d-none d-md-block">Home</span></a>
+            <a href="<?= BASEURL ?>home/about" class="text-decoration-none z-1 <?= $page == 'about' ? 'text-white' : 'text-dark' ?> transition fw-semibold p-1 align-self-center <?= $page == 'home' ? 'order-1' : 'order-2' ?>"><span class="d-block d-md-none">Kresna Setiana</span><span class="d-none d-md-block">Kresna Setiana</span></a>
             <div class="dropdown-area position-relative align-self-center z-1 <?= $page == 'home' ? 'order-2 d-block' : 'order-4 d-none d-md-block' ?>">
-                <a href="#" class="custom-dropdown story-dropdown text-decoration-none <?= $page == 'about' ? 'text-white' : 'text-dark' ?> transition fw-semibold p-1 align-self-center" data-target="#story-dropdown"><span class="d-inline-block d-md-none">Story<i class="ms-1 bi bi-chevron-down small"></i></span><span class="d-none d-md-inline-block fs-5">Story<i class="ms-1 bi bi-chevron-down small"></i></span></a>
+                <a href="#" class="custom-dropdown story-dropdown text-decoration-none <?= $page == 'about' ? 'text-white' : 'text-dark' ?> transition fw-semibold p-1 align-self-center" data-target="#story-dropdown"><span class="d-inline-block d-md-none">Story<i class="ms-1 bi bi-chevron-down small"></i></span><span class="d-none d-md-inline-block">Story<i class="ms-1 bi bi-chevron-down small"></i></span></a>
                 <div id="story-dropdown" class="custom-dropdown-list position-absolute end-0 pt-3">
                     <ul class="list-unstyled text-end overflow-visible text-nowrap">
                         <?php
                         foreach ($data['series'] as $key => $value) {
-                            echo '<li style="display: none;"><a href="' . BASEURL . 'home/story/' . $value['id'] . '" class="px-1 py-2 d-block fs-6 ' . ($page == 'about' ? 'text-white' : 'text-dark') . ' fw-semibold transition">' . $value['category'] . '</a></li>';
+                            echo '<li style="display: none;"><a href="' . BASEURL . 'home/story/' . $value['id'] . '" class="px-1 py-2 d-block ' . ($page == 'about' ? 'text-white' : 'text-dark') . ' fw-semibold transition">' . $value['category'] . '</a></li>';
                         }
                         ?>
                     </ul>
                 </div>
             </div>
             <?= $page == 'home' ? '</div><div class="d-flex justify-content-between">' : '' ?>
-            <a href="<?= BASEURL ?>home/portfolio" class="text-decoration-none z-1 <?= $page == 'about' ? 'text-white' : 'text-dark' ?> transition fw-semibold p-1 align-self-center <?= $page == 'home' ? 'order-3 d-block' : 'order-1 d-none d-md-block' ?>"><span class="d-block d-md-none">Portfolio</span><span class="d-none d-md-block fs-5">Portfolio</span></a>
+            <a href="<?= BASEURL ?>home/portfolio" class="text-decoration-none z-1 <?= $page == 'about' ? 'text-white' : 'text-dark' ?> transition fw-semibold p-1 align-self-center <?= $page == 'home' ? 'order-3 d-block' : 'order-1 d-none d-md-block' ?>"><span class="d-block d-md-none">Portfolio</span><span class="d-none d-md-block">Portfolio</span></a>
             <div class="dropdown-area position-relative align-self-center z-1 <?= $page == 'home' ? 'order-4 d-block' : 'order-3 d-none d-md-block' ?>">
-                <a href="#" class="custom-dropdown store-dropdown <?= $page == 'home' ? 'dropdown-reverse' : '' ?> text-decoration-none <?= $page == 'about' ? 'text-white' : 'text-dark' ?> transition fw-semibold p-1 align-self-center" data-target="#store-dropdown"><span class="d-inline-block d-md-none">Store<i class="ms-1 bi <?= $page == 'home' ? 'bi-chevron-up' : 'bi-chevron-down' ?> small"></i></span><span class="d-none d-md-inline-block fs-5">Store<i class="ms-1 bi <?= $page == 'home' ? 'bi-chevron-up' : 'bi-chevron-down' ?> small"></i></span></a>
+                <a href="#" class="custom-dropdown store-dropdown <?= $page == 'home' ? 'dropdown-reverse' : '' ?> text-decoration-none <?= $page == 'about' ? 'text-white' : 'text-dark' ?> transition fw-semibold p-1 align-self-center" data-target="#store-dropdown"><span class="d-inline-block d-md-none">Store<i class="ms-1 bi <?= $page == 'home' ? 'bi-chevron-up' : 'bi-chevron-down' ?> small"></i></span><span class="d-none d-md-inline-block">Store<i class="ms-1 bi <?= $page == 'home' ? 'bi-chevron-up' : 'bi-chevron-down' ?> small"></i></span></a>
                 <div id="store-dropdown" class="custom-dropdown-list position-absolute <?= $page == 'home' ? 'bottom-0 end-0 mb-4' : 'start-0 pt-3' ?>">
                     <ul class="list-unstyled <?= $page == 'home' ? 'text-end' : 'text-start' ?> overflow-visible text-nowrap">
                         <?php
                         foreach ($data['collection'] as $key => $value) {
-                            echo '<li style="display: none;"><a href="' . BASEURL . 'home/store/' . $value['id'] . '" class="px-1 py-2 d-block fs-6 ' . ($page == 'about' ? 'text-white' : 'text-dark') . ' fw-semibold transition">' . $value['category'] . '</a></li>';
+                            echo '<li style="display: none;"><a href="' . BASEURL . 'home/store/' . $value['id'] . '" class="px-1 py-2 d-block ' . ($page == 'about' ? 'text-white' : 'text-dark') . ' fw-semibold transition">' . $value['category'] . '</a></li>';
                         }
                         ?>
                     </ul>

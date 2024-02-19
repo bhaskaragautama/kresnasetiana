@@ -1,3 +1,24 @@
+<?php
+$landscapeSlide = '';
+$landscapeCounter = 0;
+$portraitSlide = '';
+$portraitCounter = 0;
+foreach ($data['slideshow'] as $key => $value) {
+    if ($value['type'] == 0) {
+        $portraitSlide .= '<div class="position-relative carousel-item h-100 overflow-hidden ' . ($portraitCounter == 0 ? 'active' : '') . '">
+            <div class="position-absolute blur-load" style="background-image: url(' . BASEURL . 'img/thumbnail/' . $value['picture'] . ');"></div>
+            <img data-src="img/' . $value['picture'] . '" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header ' . $portraitCounter . '" />
+        </div>';
+        $portraitCounter++;
+    } else {
+        $landscapeSlide .= '<div class="position-relative carousel-item h-100 overflow-hidden ' . ($landscapeCounter == 0 ? 'active' : '') . '">
+            <div class="position-absolute blur-load" style="background-image: url(' . BASEURL . 'img/thumbnail/' . $value['picture'] . ');"></div>
+            <img data-src="img/' . $value['picture'] . '" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header ' . $landscapeCounter . '" />
+        </div>';
+        $landscapeCounter++;
+    }
+}
+?>
 <!-- carousel start -->
 <div id="carousel-container" class="svh-100 w-100 position-absolute top-0 start-0">
     <div class="container-fluid h-100">
@@ -6,14 +27,7 @@
                 <div class="ratio ratio-16x9">
                     <div id="mainCarouselLandscape" class="carousel slide carousel-fade shadow" data-bs-ride="carousel">
                         <div class="carousel-inner h-100">
-                            <div class="position-relative carousel-item h-100 overflow-hidden active">
-                                <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-1.jpg);"></div>
-                                <img data-src="img/header-bg-1.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 1" />
-                            </div>
-                            <div class="position-relative carousel-item h-100 overflow-hidden">
-                                <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-2.jpg);"></div>
-                                <img data-src="img/header-bg-2.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 2" />
-                            </div>
+                            <?= $landscapeSlide ?>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#mainCarouselLandscape" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -26,18 +40,11 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6 col-sm-5 d-block d-md-none">
-                <div class="ratio ratio-portrait">
+            <div class="col-7 col-sm-6 d-block d-md-none">
+                <div class="ratio ratio-9x16">
                     <div id="mainCarouselPortrait" class="carousel slide carousel-fade shadow" data-bs-ride="carousel">
                         <div class="carousel-inner h-100">
-                            <div class="position-relative carousel-item h-100 overflow-hidden active">
-                                <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-p1.jpg);"></div>
-                                <img data-src="img/header-bg-p1.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 1" />
-                            </div>
-                            <div class="position-relative carousel-item h-100 overflow-hidden">
-                                <div class="position-absolute blur-load" style="background-image: url(<?= BASEURL ?>img/thumbnail/header-bg-p2.jpg);"></div>
-                                <img data-src="img/header-bg-p2.jpg" class="h-100 w-100 object-fit-cover transition img-thumb position-relative z-1" style="opacity: 0;" alt="Header 2" />
-                            </div>
+                            <?= $portraitSlide ?>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#mainCarouselPortrait" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

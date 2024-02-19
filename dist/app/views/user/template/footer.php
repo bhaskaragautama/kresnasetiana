@@ -7,7 +7,6 @@
         <div class="text-white order-0 order-md-1">
             <div class="d-flex flex-row justify-content-center justify-content-md-end mb-4">
                 <a href="#" class="link-light p-2"><i class="bi bi-whatsapp fs-3"></i></a>
-                <a href="#" class="link-light p-2"><i class="bi bi-facebook fs-3"></i></a>
                 <a href="#" class="link-light p-2"><i class="bi bi-instagram fs-3"></i></a>
                 <a href="#" class="link-light p-2"><i class="bi bi-telegram fs-3"></i></a>
             </div>
@@ -102,6 +101,8 @@
             });
         } else {
             $('.custom-dropdown').mouseenter(function() {
+                console.log('masuk');
+                clearTimeout(animationObj);
                 let that = this;
                 let target = $(this).data('target');
                 let navList = $(target).find('li').toArray();
@@ -124,8 +125,11 @@
                 }
             });
             $('.dropdown-area').mouseleave(function() {
-                clearTimeout(animationObj);
-                $(this).find('li').css('display', 'none');
+                console.log('pergi');
+                $.each(animationObj, function(indexInArray, valueOfElement) {
+                    clearTimeout(valueOfElement);
+                });
+                $(this).find('li').hide();
             });
         }
     });

@@ -21,7 +21,7 @@
                     echo '<td class="text-nowrap">' . $value['tag'] . '</td>';
                     echo '<td class="text-nowrap">
                         <a href="' . BASEURL . 'tag/form/' . $value['id'] . '" class="btn btn-warning btn-sm" title="Edit"><i class="bi bi-pencil-square"></i> Edit</a>
-                        <button type="button" class="btn btn-danger btn-sm delete-btn" data-delete="' . BASEURL . 'tag/delete/' . $value['id'] . '" title="Delete"><i class="bi bi-trash"></i> Delete</a>
+                        <button type="button" class="btn btn-danger btn-sm delete-btn" data-delete="' . BASEURL . 'tag/delete/' . $value['id'] . '" title="Delete"><i class="bi bi-trash"></i> Delete</button>
                     </td>';
                     echo '</tr>';
                     $i++;

@@ -70,6 +70,15 @@
                         <a href="<?= BASEURL . 'best'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-hand-thumbs-up me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Best Photo</span></a>
                     </li>
                 </ul>
+                <div class="py-2 px-3 text-secondary small text-center text-lg-start">SLIDESHOW</div>
+                <ul class="list-unstyled d-flex flex-column fw-semibold">
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'lslideshow' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'slideshow/index/1'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-card-image me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Landscape</span></a>
+                    </li>
+                    <li class="admin-nav transition mb-2 text-lg-start text-center <?= $page == 'pslideshow' ? 'active' : '' ?>">
+                        <a href="<?= BASEURL . 'slideshow/index/0'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-file-image me-0 me-lg-2"></i> <span class="d-lg-inline-block d-none">Portrait</span></a>
+                    </li>
+                </ul>
             </div>
             <div class="<?= !isset($_SESSION['flow-menu']) ? 'col-md-10 offset-md-2' : ($_SESSION['flow-menu'] == 1 ? 'col-md-10 offset-md-2' : 'col-md-12') ?> p-0 min-svh-100 bg-white position-relative" id="main-content">
                 <nav class="navbar navbar-expand-md bg-body-tertiary">
@@ -97,17 +106,46 @@
                 </nav>
                 <div class="offcanvas offcanvas-start" data-bs-theme="dark" tabindex="-1" id="navOffcanvas" aria-labelledby="navOffcanvasLabel">
                     <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="navOffcanvasLabel">Cash Flow</h5>
+                        <h5 class="offcanvas-title" id="navOffcanvasLabel">Admin</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
                         <ul class="list-unstyled d-flex flex-column fw-semibold">
-                            <li class="admin-nav mb-2 text-lg-start <?= $page == 'dashboard' ? 'active' : '' ?>">
-                                <a class="py-3 px-5 d-block" href="<?= BASEURL . 'dashboard'; ?>"><i class="bi bi-speedometer me-2"></i> <span>Dashboard</span></a>
+                            <li class="admin-nav transition mb-2 <?= $page == 'dashboard' ? 'active' : '' ?>">
+                                <a href="<?= BASEURL . 'dashboard'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-speedometer me-0 me-lg-2"></i> Dashboard</a>
                             </li>
-                            <li class="admin-nav mb-2 text-lg-start <?= $page == 'term' ? 'active' : '' ?>">
-                                <a class="py-3 px-5 d-block" href="<?= BASEURL . 'photo'; ?>"><i class="bi bi-images me-2"></i> <span>Photos</span></a>
+                        </ul>
+                        <div class="py-2 px-3 text-secondary small">STORIES</div>
+                        <ul class="list-unstyled d-flex flex-column fw-semibold">
+                            <li class="admin-nav transition mb-2 <?= $page == 'series' ? 'active' : '' ?>">
+                                <a href="<?= BASEURL . 'series'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-card-list me-0 me-lg-2"></i> Series</a>
                             </li>
+                            <li class="admin-nav transition mb-2 <?= $page == 'story' ? 'active' : '' ?>">
+                                <a href="<?= BASEURL . 'story'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-journal me-0 me-lg-2"></i> Story</a>
+                            </li>
+                        </ul>
+                        <div class="py-2 px-3 text-secondary small">PORTFOLIO</div>
+                        <ul class="list-unstyled d-flex flex-column fw-semibold">
+                            <li class="admin-nav transition mb-2 <?= $page == 'tag' ? 'active' : '' ?>">
+                                <a href="<?= BASEURL . 'tag'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-tags me-0 me-lg-2"></i> Tags</a>
+                            </li>
+                            <li class="admin-nav transition mb-2 <?= $page == 'photo' ? 'active' : '' ?>">
+                                <a href="<?= BASEURL . 'photo'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-images me-0 me-lg-2"></i> Photo</a>
+                            </li>
+                        </ul>
+                        <div class="py-2 px-3 text-secondary small">STORE</div>
+                        <ul class="list-unstyled d-flex flex-column fw-semibold">
+                            <li class="admin-nav transition mb-2 <?= $page == 'collection' ? 'active' : '' ?>">
+                                <a href="<?= BASEURL . 'collection'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-cart me-0 me-lg-2"></i> Collection</a>
+                            </li>
+                            <li class="admin-nav transition mb-2 <?= $page == 'item' ? 'active' : '' ?>">
+                                <a href="<?= BASEURL . 'item'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-bag-check me-0 me-lg-2"></i> Item</a>
+                            </li>
+                        </ul>
+                        <div class="py-2 px-3 text-secondary small">MANAGE</div>
+                        <ul class="list-unstyled d-flex flex-column fw-semibold">
+                            <li class="admin-nav transition mb-2 <?= $page == 'best' ? 'active' : '' ?>">
+                                <a href="<?= BASEURL . 'best'; ?>" class="transition d-block py-2 px-3"><i class="bi bi-hand-thumbs-up me-0 me-lg-2"></i> Best Photo</a>
                             </li>
                         </ul>
                     </div>

@@ -16,6 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `carousel`
+--
+
+DROP TABLE IF EXISTS `carousel`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `carousel` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `picture` text,
+  `type` tinyint(1) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `carousel`
+--
+
+LOCK TABLES `carousel` WRITE;
+/*!40000 ALTER TABLE `carousel` DISABLE KEYS */;
+INSERT INTO `carousel` VALUES (1,'1708309279-bride-holding-her-wedding-day-s-bouquet-beautiful-roses.jpg',1,'2024-02-19 10:21:19',NULL),(2,'1708309771-groom-putting-ring-bride-s-finger.jpg',1,'2024-02-19 10:29:31',NULL),(4,'1708311602-IMG_2757.jpg',0,'2024-02-19 11:00:04',NULL),(5,'1708311949-full-shot-married-couple-dancing-together.jpg',0,'2024-02-19 11:05:50',NULL);
+/*!40000 ALTER TABLE `carousel` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `portfolio`
 --
 
@@ -305,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-19  6:45:42
+-- Dump completed on 2024-02-19 15:05:05
